@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Formação Estagiários — Marca Seleta 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1827;--bg2:#0F2035;--bg3:#162840;--bg4:#1A3050;--bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.12);--tx:#D8E4F2;--tx2:#7A96B8;--tx3:#4A6280;--bl:#4A9EE8;--bl-d:#185FA5;--bl-bg:rgba(74,158,232,0.10);--am:#F0A030;--am-d:#BA7517;--am-bg:rgba(240,160,48,0.10);--gn:#32C87A;--gn-d:#0F6E56;--gn-bg:rgba(50,200,122,0.10);--rd:#E84848;--rd-d:#A32D2D;--rd-bg:rgba(232,72,72,0.10);--pu:#9B84F0;--pu-d:#534AB7;--pu-bg:rgba(155,132,240,0.10);--tl:#28BFD8;--tl-bg:rgba(40,191,216,0.10);--r:10px;--rs:6px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none}
+.hdr{background:var(--bg2);border-bottom:1px solid var(--bd);padding:13px 28px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:200}
+.hdr h1{font-size:17px;font-weight:700;letter-spacing:-.3px}
+.hdr p{font-size:12px;color:var(--tx2);margin-top:2px}
+.hdr-r{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.btn{padding:7px 14px;border-radius:var(--rs);font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bd2);background:var(--bg3);color:var(--tx);font-family:inherit;transition:all .15s;white-space:nowrap}
+.btn:hover{background:var(--bg4)}
+.btn.eact{background:rgba(240,160,48,0.15);border-color:var(--am);color:var(--am)}
+.btn-rst{border-color:var(--rd-d);color:var(--rd);background:var(--rd-bg)}
+/* INTERN BAR */
+.ibar{background:var(--bg3);border-bottom:1px solid var(--bd);padding:9px 28px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:50px;z-index:150}
+.ilabel{font-size:10px;font-weight:700;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.icur{font-size:13px;font-weight:700;color:var(--tx);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.itog{font-size:11px;font-weight:600;padding:4px 11px;border-radius:20px;border:1px solid var(--bd2);color:var(--tx2);cursor:pointer;background:none;font-family:inherit;white-space:nowrap}
+.itog:hover{color:var(--tx);border-color:var(--bl)}
+.imenu{background:var(--bg2);border-bottom:1px solid var(--bd);padding:12px 28px;display:none}
+.imenu.open{display:block}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:6px}
+.ibtn{padding:7px 12px;font-size:12px;font-weight:500;border:1px solid var(--bd);border-radius:var(--rs);background:var(--bg3);color:var(--tx2);cursor:pointer;font-family:inherit;text-align:left;transition:all .15s}
+.ibtn:hover{color:var(--tx);border-color:var(--bd2)}
+.ibtn.on{background:var(--bl-bg);border-color:var(--bl);color:var(--bl);font-weight:600}
+/* PROGRESS BAR */
+.psum{background:var(--bg2);border-bottom:1px solid var(--bd);padding:13px 28px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.psi label{font-size:10px;font-weight:600;color:var(--tx3);letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:5px}
+.psr{display:flex;align-items:center;gap:8px}
+.bt{flex:1;height:5px;border-radius:3px;background:var(--bg4);overflow:hidden}
+.bf{height:100%;border-radius:3px;transition:width .4s ease}
+.pp{font-size:12px;font-weight:700;min-width:30px;text-align:right}
+@media(max-width:700px){.psum{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.psum{grid-template-columns:1fr}}
+/* NAV */
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);padding:0 28px;display:flex;overflow-x:auto;scrollbar-width:none;gap:0}
+.nav::-webkit-scrollbar{display:none}
+.nb{padding:12px 15px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:none;color:var(--tx2);border-bottom:2px solid transparent;white-space:nowrap;font-family:inherit;transition:all .15s;letter-spacing:.02em}
+.nb.on{color:var(--tx);border-bottom-color:var(--bl)}
+.nb:hover:not(.on){color:var(--tx)}
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:24px 20px 60px}
+.panel{display:none}.panel.on{display:block}
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin-bottom:12px}
+.ct{font-size:15px;font-weight:700;margin-bottom:4px}
+.cs{font-size:12px;color:var(--tx2);margin-bottom:14px}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.sh h2{font-size:17px;font-weight:700}
+.sh p{font-size:12px;color:var(--tx2);margin-top:3px}
+.phase{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3);margin:14px 0 7px;padding-bottom:4px;border-bottom:1px solid var(--bd)}
+.sph{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--bl);margin:14px 0 6px;display:flex;align-items:center;gap:6px}
+.sph::before,.sph::after{content:'';flex:none;width:8px;height:1px;background:var(--bd)}
+/* BADGES */
+.b{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;line-height:1.6}
+.bbl{background:var(--bl-bg);color:var(--bl)}.bam{background:var(--am-bg);color:var(--am)}.bgn{background:var(--gn-bg);color:var(--gn)}.brd{background:var(--rd-bg);color:var(--rd)}.bpu{background:var(--pu-bg);color:var(--pu)}.bgr{background:var(--bg4);color:var(--tx2)}.btl{background:var(--tl-bg);color:var(--tl)}
+/* INFO BARS */
+.ib{border-radius:var(--rs);padding:10px 14px;margin-bottom:12px;font-size:13px;border:1px solid}
+.ibb{background:var(--bl-bg);border-color:rgba(74,158,232,.25);color:var(--bl)}
+.iba{background:var(--am-bg);border-color:rgba(240,160,48,.25);color:var(--am)}
+.ibr{background:var(--rd-bg);border-color:rgba(232,72,72,.25);color:var(--rd)}
+.ibg{background:var(--bg3);border-color:var(--bd2);color:var(--tx2)}
+.ibgn{background:var(--gn-bg);border-color:rgba(50,200,122,.25);color:var(--gn)}
+.ibtl{background:var(--tl-bg);border-color:rgba(40,191,216,.25);color:var(--tl)}
+/* SELECTORS */
+.sel{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.sbtn{padding:6px 12px;border-radius:var(--rs);font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bd2);background:var(--bg3);color:var(--tx2);font-family:inherit}
+.sbtn.on[data-a="kam"]{border-color:var(--bl);color:var(--bl);background:var(--bl-bg)}
+.sbtn.on[data-a="back"]{border-color:var(--gn);color:var(--gn);background:var(--gn-bg)}
+.sbtn.on[data-a="sac"]{border-color:var(--rd);color:var(--rd);background:var(--rd-bg)}
+.sbtn.on[data-a="vend"]{border-color:var(--am);color:var(--am);background:var(--am-bg)}
+.sbtn.on[data-p="eng"]{border-color:var(--bl);color:var(--bl);background:var(--bl-bg)}
+.sbtn.on[data-p="serv"]{border-color:var(--gn);color:var(--gn);background:var(--gn-bg)}
+.sbtn.on[data-p="neg"]{border-color:var(--am);color:var(--am);background:var(--am-bg)}
+.apane,.ppane{display:none}.apane.on,.ppane.on{display:block}
+/* CHECKLIST */
+.cl{display:flex;flex-direction:column}
+.ci{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid var(--bd);cursor:pointer;border-radius:4px}
+.ci:last-child{border-bottom:none}
+.ci:hover{background:rgba(255,255,255,.02)}
+.ci input{display:none}
+.ck{width:17px;height:17px;border-radius:4px;border:1.5px solid var(--bd2);background:transparent;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.ck svg{display:none}
+.ci input:checked~.ck{background:var(--bl);border-color:var(--bl)}
+.ci input:checked~.ck svg{display:block}
+.ci.done .ctx{color:var(--tx3);text-decoration:line-through}
+.ci.done .ctx small{color:var(--tx3)}
+.ctx{flex:1;font-size:13px;color:var(--tx);line-height:1.5}
+.ctx small{font-size:11px;color:var(--tx2);display:block;margin-top:1px}
+.cgn input:checked~.ck{background:var(--gn);border-color:var(--gn)}
+.cam input:checked~.ck{background:var(--am);border-color:var(--am)}
+.crd input:checked~.ck{background:var(--rd);border-color:var(--rd)}
+.cpu input:checked~.ck{background:var(--pu);border-color:var(--pu)}
+.ctl input:checked~.ck{background:var(--tl);border-color:var(--tl)}
+/* SEC PROGRESS */
+.sp{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:11px 14px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sp span{font-size:12px;color:var(--tx2);min-width:130px;font-weight:600}
+.sp .bt{height:6px}
+.spp{font-size:13px;font-weight:700;min-width:38px;text-align:right}
+/* GRID3 */
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:600px){.g3{grid-template-columns:1fr}}
+@media(max-width:620px){#panel-360 .c360{grid-column:1/-1}}
+.po{border:1px solid var(--bd2);border-top:3px solid var(--bd2);border-radius:var(--r);padding:12px;cursor:pointer;transition:all .15s}
+.po h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.po p{font-size:12px;color:var(--tx2)}
+.po.on.eng{border-top-color:var(--bl);background:var(--bl-bg)}
+.po.on.serv{border-top-color:var(--gn);background:var(--gn-bg)}
+.po.on.neg{border-top-color:var(--am);background:var(--am-bg)}
+/* ROW */
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd);font-size:13px}
+.row:last-child{border-bottom:none}
+.row strong{font-weight:600}
+.dt{font-size:12px;color:var(--tx2);white-space:nowrap}
+.dt.hot{color:var(--rd);font-weight:700}
+/* MILESTONE */
+.ms{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--bd)}
+.ms:last-child{border-bottom:none}
+.mi{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.md{flex:1}.md strong{font-size:13px;font-weight:500}.md p{font-size:12px;color:var(--tx2);margin:2px 0 0;line-height:1.4}
+.mdt{font-size:11px;color:var(--tx2);white-space:nowrap;padding-top:3px}
+.mdt.hot{color:var(--rd);font-weight:700}
+/* HACKATHON */
+.hcard{border:2px solid var(--bl);border-radius:var(--r);padding:16px;margin-bottom:12px;background:rgba(74,158,232,0.05)}
+/* EDIT */
+body.emode .ed{outline:1px dashed rgba(240,160,48,0.4);border-radius:3px;cursor:text}
+body.emode .ed:hover{outline-color:var(--am);background:rgba(240,160,48,0.05)}
+body.emode .ed:focus{outline:2px solid var(--am);background:rgba(240,160,48,0.08)}
+.enote{display:none;font-size:12px;color:var(--am);margin-left:4px}
+body.emode .enote{display:inline}
+h3{font-size:16px;font-weight:700;margin:0 0 4px}
+h4{font-size:14px;font-weight:700;margin:0 0 8px}
+p{font-size:13px;line-height:1.6;color:var(--tx2);margin:0}
+/* LOGIN */
+.login-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,24,39,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(20px)}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.login-box{background:linear-gradient(145deg,rgba(22,40,64,0.9),rgba(15,32,53,0.95));border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:40px 36px;width:100%;max-width:420px;box-shadow:0 25px 60px rgba(0,0,0,0.5),0 0 120px rgba(74,158,232,0.07);animation:slideUp .5s ease both}
+.login-logo{text-align:center;margin-bottom:32px}
+.login-logo h2{font-size:22px;font-weight:700;background:linear-gradient(135deg,#4A9EE8,#9B84F0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.login-logo p{font-size:12px;color:var(--tx3);margin-top:6px}
+.login-group{margin-bottom:18px;position:relative}
+.login-group label{font-size:11px;font-weight:700;color:var(--tx2);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
+.login-input{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:14px;font-family:inherit;outline:none;transition:all .2s;box-sizing:border-box}
+.login-input:focus{border-color:var(--bl);box-shadow:0 0 0 3px rgba(74,158,232,0.15)}
+.login-input.error{border-color:var(--rd);animation:shake .4s ease}
+.login-btn{width:100%;padding:13px;background:linear-gradient(135deg,#4A9EE8,#3A7EC8);border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .2s;margin-top:8px}
+.login-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,158,232,0.35)}
+.login-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.login-error{background:var(--rd-bg);border:1px solid rgba(232,72,72,.3);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--rd);margin-bottom:16px;display:none;animation:slideUp .3s ease}
+.login-error.show{display:block}
+.pwd-toggle{position:absolute;right:12px;top:32px;background:none;border:none;color:var(--tx3);cursor:pointer;font-size:16px;padding:4px}
+/* USER BAR */
+.user-info{display:flex;align-items:center;gap:10px}
+.user-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--bl),var(--pu));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.user-name{font-size:12px;font-weight:600;color:var(--tx)}
+.user-email{font-size:10px;color:var(--tx3)}
+.btn-logout{padding:6px 12px;border-radius:var(--rs);font-size:11px;font-weight:600;cursor:pointer;border:1px solid rgba(232,72,72,.3);background:rgba(232,72,72,.08);color:var(--rd);font-family:inherit;transition:all .15s}
+.btn-logout:hover{background:rgba(232,72,72,.15)}
+/* ADMIN */
+.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);padding:16px;text-align:center}
+.stat-card .val{font-size:24px;font-weight:700;margin-bottom:2px}
+.stat-card .lbl{font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.rank-table,.user-table{width:100%;border-collapse:separate;border-spacing:0}
+.rank-table th,.user-table th{font-size:10px;font-weight:700;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid var(--bd2)}
+.rank-table td,.user-table td{padding:10px 12px;font-size:13px;border-bottom:1px solid var(--bd)}
+.rank-table tr:hover td,.user-table tr:hover td{background:rgba(255,255,255,.02)}
+.rank-pos{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank-1{background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a1a}
+.rank-2{background:linear-gradient(135deg,#C0C0C0,#A0A0A0);color:#1a1a1a}
+.rank-3{background:linear-gradient(135deg,#CD7F32,#A0522D);color:#fff}
+.rank-other{background:var(--bg4);color:var(--tx2)}
+.rank-bar{height:6px;border-radius:3px;background:var(--bg4);overflow:hidden;min-width:80px}
+.rank-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+.btn-sm{padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--bd2);background:var(--bg3);color:var(--tx2);font-family:inherit;transition:all .15s;margin-right:4px}
+.btn-sm:hover{background:var(--bg4);color:var(--tx)}
+.btn-sm.danger{border-color:rgba(232,72,72,.3);color:var(--rd);background:rgba(232,72,72,.08)}
+.btn-sm.danger:hover{background:rgba(232,72,72,.15)}
+.btn-add{padding:8px 16px;border-radius:var(--rs);font-size:12px;font-weight:700;cursor:pointer;border:1px solid var(--bl);background:var(--bl-bg);color:var(--bl);font-family:inherit;transition:all .15s}
+.btn-add:hover{background:rgba(74,158,232,.2)}
+/* MODAL */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.modal-overlay.show{display:flex}
+.modal-box{background:var(--bg2);border:1px solid var(--bd2);border-radius:12px;padding:28px;width:100%;max-width:480px;box-shadow:0 20px 50px rgba(0,0,0,0.4);animation:slideUp .3s ease}
+.modal-box h3{font-size:16px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between}
+.modal-close{background:none;border:none;color:var(--tx3);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:4px}
+.modal-close:hover{color:var(--tx);background:var(--bg4)}
+.modal-group{margin-bottom:16px}
+.modal-group label{font-size:11px;font-weight:700;color:var(--tx2);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
+.modal-group input,.modal-group select{width:100%;padding:10px 12px;background:var(--bg);border:1.5px solid var(--bd2);border-radius:6px;color:var(--tx);font-size:13px;font-family:inherit;outline:none;transition:border .2s;box-sizing:border-box}
+.modal-group input:focus,.modal-group select:focus{border-color:var(--bl)}
+.modal-group select{cursor:pointer}
+.modal-group select option{background:var(--bg2);color:var(--tx)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+.modal-actions .btn{min-width:100px;text-align:center}
+.modal-error{font-size:12px;color:var(--rd);margin-top:-8px;margin-bottom:12px;display:none}
+.modal-error.show{display:block}
+.hidden{display:none!important}
+@media(max-width:600px){.admin-stats{grid-template-columns:1fr}.login-box{margin:16px;padding:28px 24px}}
+</style>
+</head>
+<body>
+
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="login-logo">
+      <h2>Marca Seleta · DB1 Group</h2>
+      <p>Programa de Formação — Estagiários 2026</p>
+    </div>
+    <div class="login-error" id="loginError"></div>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="login-group">
+        <label>Email corporativo</label>
+        <input class="login-input" type="email" id="loginEmail" placeholder="usuario@db1.com.br" required autocomplete="email">
+      </div>
+      <div class="login-group">
+        <label>Senha</label>
+        <input class="login-input" type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+        <button type="button" class="pwd-toggle" onclick="togglePwd()">👁</button>
+      </div>
+      <button class="login-btn" type="submit" id="loginBtn">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<div class="hdr">
+  <div>
+    <h1><span class="ed" data-k="title">Programa de Formação — Estagiários 2026</span></h1>
+    <p><span class="ed" data-k="sub">Marca Seleta · DB1 Group · Anytools Ecosystem · Abril–Outubro</span> <span class="enote">✏️ Edição ativa</span></p>
+  </div>
+  <div class="hdr-r">
+    <div class="user-info" id="userInfo">
+      <div class="user-avatar" id="userAvatar"></div>
+      <div><div class="user-name" id="userName"></div><div class="user-email" id="userEmail"></div></div>
+    </div>
+    <button class="btn btn-rst admin-only" onclick="resetAll()">Limpar progresso</button>
+    <button class="btn admin-only" id="ebtn" onclick="toggleEdit()">✏️ Editar textos</button>
+    <button class="btn-logout" onclick="handleLogout()">↩ Sair</button>
+  </div>
+</div>
+
+<div class="ibar" id="internBar">
+  <span class="ilabel">Acompanhando</span>
+  <span class="icur" id="icur">—</span>
+  <button class="itog admin-only" onclick="toggleMenu()">▼ Trocar estagiário</button>
+</div>
+<div class="imenu" id="imenu"><div class="igrid" id="igrid"></div></div>
+
+<div class="psum">
+  <div class="psi"><label>1 · Marca Seleta</label><div class="psr"><div class="bt"><div class="bf" id="bms" style="background:var(--bl);width:0%"></div></div><div class="pp" id="pms" style="color:var(--bl)">0%</div></div></div>
+  <div class="psi"><label>2 · Trilha IA</label><div class="psr"><div class="bt"><div class="bf" id="bia" style="background:var(--am);width:0%"></div></div><div class="pp" id="pia" style="color:var(--am)">0%</div></div></div>
+  <div class="psi"><label>3 · N8N + Hackathon</label><div class="psr"><div class="bt"><div class="bf" id="bn8n" style="background:var(--pu);width:0%"></div></div><div class="pp" id="pn8n" style="color:var(--pu)">0%</div></div></div>
+  <div class="psi"><label>4 · PDI Anytools</label><div class="psr"><div class="bt"><div class="bf" id="bpdi" style="background:var(--gn);width:0%"></div></div><div class="pp" id="ppdi" style="color:var(--gn)">0%</div></div></div>
+  <div class="psi"><label>Entregas &amp; Certificado</label><div class="psr"><div class="bt"><div class="bf" id="bent" style="background:var(--rd);width:0%"></div></div><div class="pp" id="pent" style="color:var(--rd)">0%</div></div></div>
+</div>
+
+<div class="nav">
+  <button class="nb on" onclick="sp('visao',this)">Visão Geral</button>
+  <button class="nb" onclick="sp('ms',this)">1 · Marca Seleta</button>
+  <button class="nb" onclick="sp('ia',this)">2 · Trilha IA</button>
+  <button class="nb" onclick="sp('n8n',this)">3 · N8N + Hackathon</button>
+  <button class="nb" onclick="sp('pdi',this)">4 · PDI Anytools</button>
+  <button class="nb" onclick="sp('ent',this)">Entregas &amp; Certificado</button>
+  <button class="nb" onclick="sp('360',this)">Avaliação 360°</button>
+  <button class="nb admin-only hidden" id="adminTab" onclick="sp('admin',this)">🔒 Admin</button>
+</div>
+<div class="main">
+
+<div class="panel on" id="panel-visao">
+  <div class="sh"><div><h2 class="ed" data-k="vh2">As 4 trilhas e seus prazos</h2><p class="ed" data-k="vsub">Processos seletivos internos podem ocorrer a qualquer momento — lideranças devem considerar este cronograma</p></div></div>
+  <div class="ib ibg"><strong>Para lideranças:</strong> <span class="ed" data-k="lnote">Estagiários em formação ativa até 30/Jul (trilhas 1,2,3). PDI Anytools Engenharia continua até 31/Out. Use o filtro de estagiário para acompanhar o progresso individual.</span></div>
+  <div class="card">
+    <div class="row"><span><span class="b bbl" style="margin-right:8px">1</span><strong>Formação Marca Seleta</strong></span><span class="dt">Abr–Jun · prazo: <strong>30/Jul</strong></span></div>
+    <div class="row"><span><span class="b bam" style="margin-right:8px">2</span><strong>Trilha de IA Corporativa (S1–S12)</strong></span><span class="dt">Mai–Jul · prazo: <strong>30/Jul</strong></span></div>
+    <div class="row"><span><span class="b bpu" style="margin-right:8px">3</span><strong>Automação com N8N · Hackathon</strong></span><span class="dt">Abr–Jul · prazo N8N: <strong>15/Jul</strong> · Hackathon: <strong>17/Jul</strong></span></div>
+    <div class="row"><span><span class="b bgn" style="margin-right:8px">4</span><strong>PDI Anytools</strong></span><span class="dt">01/Jun–<strong>31/Ago</strong> (Serv/Neg) · 01/Jun–<strong>31/Out</strong> (Eng)</span></div>
+  </div>
+  <div class="card">
+    <div class="ct">Linha do tempo condensada</div>
+    <div class="phase" style="margin-top:12px">Abril</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bbl" style="margin-right:5px">T1</span>Onboarding + área MS &nbsp;<span class="b bpu" style="margin-right:5px">T3</span>N8N inicia (29/Abr)</p>
+    <div class="phase">Maio</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bbl" style="margin-right:5px">T1</span>Mês 2 MS &nbsp;<span class="b bam" style="margin-right:5px">T2</span>IA S1 (7/Mai) → S3 Fundação &nbsp;<span class="b bpu" style="margin-right:5px">T3</span>N8N módulo 1</p>
+    <div class="phase">Junho</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bbl" style="margin-right:5px">T1</span>Mês 3 autonomia &nbsp;<span class="b bam" style="margin-right:5px">T2</span>S4–S7 Adoção Guiada &nbsp;<span class="b bpu" style="margin-right:5px">T3</span>N8N mod.2–3 &nbsp;<span class="b bgn" style="margin-right:5px">T4</span>PDI inicia 01/Jun</p>
+    <div class="phase" style="color:var(--rd)">Julho — mês crítico</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bpu" style="margin-right:5px">T3</span>N8N <strong style="color:var(--rd)">15/Jul</strong> · 🏆 Hackathon <strong style="color:var(--rd)">17/Jul</strong> &nbsp;<span class="b bam" style="margin-right:5px">T2</span>S8–S12 prazo <strong style="color:var(--rd)">30/Jul</strong> &nbsp;<span class="b bbl" style="margin-right:5px">T1</span>Prova + certificado <strong style="color:var(--rd)">30/Jul</strong></p>
+    <div class="phase">Agosto</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bgn" style="margin-right:5px">T4</span>DevOps I Aprendiz conclusão <strong style="color:var(--rd)">31/Ago</strong> · PDI Serv/Neg conclusão <strong style="color:var(--rd)">31/Ago</strong> · Formação Alura Eng. inicia <strong>01/Ago</strong></p>
+    <div class="phase">Setembro – Outubro</div>
+    <p style="font-size:13px;color:var(--tx2)"><span class="b bgn" style="margin-right:5px">T4</span>Formação Alura Engenharia (Agilidade · Soft Skills · Angular · Java) — conclusão <strong style="color:var(--rd)">31/Out</strong></p>
+  </div>
+</div>
+
+<div class="panel" id="panel-ms">
+  <div class="sh"><div><h2>Formação Marca Seleta</h2><p class="ed" data-k="mssub">Abr–Jun · 3 meses · Prova final + certificado: deadline 30/Jul</p></div></div>
+  <div class="sp"><span id="mslbl">Progresso (área)</span><div class="bt"><div class="bf" id="bms2" style="background:var(--bl);width:0%"></div></div><div class="spp" id="pms2" style="color:var(--bl)">0%</div></div>
+  <div class="ib ibb">Selecione a área de atuação deste estagiário.</div>
+  <div class="sel">
+    <button class="sbtn on" data-a="kam" onclick="selA('kam',this)">KAM — Gestão de Contas</button>
+    <button class="sbtn" data-a="back" onclick="selA('back',this)">Backoffice / Cadastro</button>
+    <button class="sbtn" data-a="sac" onclick="selA('sac',this)">SAC</button>
+    <button class="sbtn" data-a="vend" onclick="selA('vend',this)">Vendas</button>
+  </div>
+  <div id="ap-kam" class="apane on">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px"><div><div class="ct ed" data-k="kt">Gestão de Contas — KAM</div><div class="cs ed" data-k="ks">Parceiro estratégico e operacional dos sellers nos marketplaces</div></div><span class="b bbl">Gerente de Contas</span></div>
+      <div class="phase" style="margin-top:0">Abril · Mês 1 — Fundação</div>
+      <div class="cl">
+<label class="ci" onclick="tg('ms-kam-1')"><input type="checkbox" id="ms-kam-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Onboarding DB1 + Anytools + Marca Seleta — cultura, ferramentas, sistemas</div></label>
+<label class="ci" onclick="tg('ms-kam-2')"><input type="checkbox" id="ms-kam-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Ecossistema de marketplaces — ML, Shopee, Amazon, B2W, Magalu<small>Taxas, campanhas, SLA, regras por canal</small></div></label>
+<label class="ci" onclick="tg('ms-kam-3')"><input type="checkbox" id="ms-kam-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Hub AnyMarket — navegação, dashboards e relatórios de GMV</div></label>
+<label class="ci" onclick="tg('ms-kam-4')"><input type="checkbox" id="ms-kam-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Indicadores: GMV, ticket médio, conversão, buybox, reputação, SLA, ruptura</div></label>
+<label class="ci" onclick="tg('ms-kam-5')"><input type="checkbox" id="ms-kam-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Shadowing em reuniões de conta com analista sênior</div></label>
+      </div>
+      <div class="phase">Maio · Mês 2 — Desenvolvimento</div>
+      <div class="cl">
+<label class="ci" onclick="tg('ms-kam-6')"><input type="checkbox" id="ms-kam-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Análise de performance — relatório semanal de conta</div></label>
+<label class="ci" onclick="tg('ms-kam-7')"><input type="checkbox" id="ms-kam-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Campanhas e calendário comercial</div></label>
+<label class="ci" onclick="tg('ms-kam-8')"><input type="checkbox" id="ms-kam-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Pricing e análise de concorrência</div></label>
+<label class="ci" onclick="tg('ms-kam-9')"><input type="checkbox" id="ms-kam-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Primeira condução ativa de reunião de conta</div></label>
+      </div>
+      <div class="phase">Junho · Mês 3 — Autonomia</div>
+      <div class="cl">
+<label class="ci" onclick="tg('ms-kam-10')"><input type="checkbox" id="ms-kam-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Gestão autônoma de conta piloto</div></label>
+<label class="ci" onclick="tg('ms-kam-11')"><input type="checkbox" id="ms-kam-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Diagnóstico de expansão para novos marketplaces</div></label>
+<label class="ci" onclick="tg('ms-kam-12')"><input type="checkbox" id="ms-kam-12"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — Relatório estratégico de conta (até 30/Jul)</strong></div></label>
+      </div>
+    </div>
+  </div>
+  <div id="ap-back" class="apane">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px"><div><div class="ct">Backoffice / Cadastro de Produtos</div><div class="cs">Qualidade operacional, catálogo e integração de anúncios</div></div><span class="b bgn">Analista de Cadastro</span></div>
+      <div class="phase" style="margin-top:0">Abril · Mês 1</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('ms-back-1')"><input type="checkbox" id="ms-back-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Onboarding DB1 + Anytools + Marca Seleta</div></label>
+<label class="ci cgn" onclick="tg('ms-back-2')"><input type="checkbox" id="ms-back-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Estrutura de catálogo — categorias, atributos, variações, imagens por canal</div></label>
+<label class="ci cgn" onclick="tg('ms-back-3')"><input type="checkbox" id="ms-back-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">AnyMarket — criação de produto, SKU, grade, transmissão e erros comuns</div></label>
+<label class="ci cgn" onclick="tg('ms-back-4')"><input type="checkbox" id="ms-back-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Padronização: SEO de marketplace, regras editoriais, qualidade de imagem</div></label>
+<label class="ci cgn" onclick="tg('ms-back-5')"><input type="checkbox" id="ms-back-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Indicadores: produtividade, backlog, SLA operacional, taxa de erro</div></label>
+      </div>
+      <div class="phase">Maio · Mês 2</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('ms-back-6')"><input type="checkbox" id="ms-back-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Upload em massa — template padrão, envio em lote, validação</div></label>
+<label class="ci cgn" onclick="tg('ms-back-7')"><input type="checkbox" id="ms-back-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Tratamento de erros de integração — diagnóstico, correção, escalonamento</div></label>
+<label class="ci cgn" onclick="tg('ms-back-8')"><input type="checkbox" id="ms-back-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Variações e grades — produto pai × filho por marketplace</div></label>
+<label class="ci cgn" onclick="tg('ms-back-9')"><input type="checkbox" id="ms-back-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Revisão e atualização de catálogos existentes — auditoria em lote</div></label>
+      </div>
+      <div class="phase">Junho · Mês 3</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('ms-back-10')"><input type="checkbox" id="ms-back-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Ciclo completo autônomo — briefing → cadastro → transmissão → validação</div></label>
+<label class="ci cgn" onclick="tg('ms-back-11')"><input type="checkbox" id="ms-back-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — Catálogo (mín. 50 SKUs) + relatório de qualidade (até 30/Jul)</strong></div></label>
+      </div>
+    </div>
+  </div>
+  <div id="ap-sac" class="apane">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px"><div><div class="ct">SAC para Marketplaces</div><div class="cs">Experiência do consumidor, reputação e atendimento pós-venda</div></div><span class="b brd">Analista de SAC</span></div>
+      <div class="phase" style="margin-top:0">Abril · Mês 1</div>
+      <div class="cl">
+<label class="ci crd" onclick="tg('ms-sac-1')"><input type="checkbox" id="ms-sac-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Onboarding DB1 + Anytools + Marca Seleta</div></label>
+<label class="ci crd" onclick="tg('ms-sac-2')"><input type="checkbox" id="ms-sac-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Regras de SLA por marketplace — prazos, tipos, penalidades, escalonamento</div></label>
+<label class="ci crd" onclick="tg('ms-sac-3')"><input type="checkbox" id="ms-sac-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Fluxos de reclamação — pré/pós-venda, troca, logística reversa, mediação</div></label>
+<label class="ci crd" onclick="tg('ms-sac-4')"><input type="checkbox" id="ms-sac-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Comunicação profissional e empática — tom de voz, templates, limites</div></label>
+<label class="ci crd" onclick="tg('ms-sac-5')"><input type="checkbox" id="ms-sac-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Indicadores: SLA, tempo médio de resposta, reputação, taxa de solução</div></label>
+      </div>
+      <div class="phase">Maio · Mês 2</div>
+      <div class="cl">
+<label class="ci crd" onclick="tg('ms-sac-6')"><input type="checkbox" id="ms-sac-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Casos complexos — defeito, extravio, cancelamento, cliente reincidente</div></label>
+<label class="ci crd" onclick="tg('ms-sac-7')"><input type="checkbox" id="ms-sac-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Mediação e Reclame Aqui — argumentação, provas, encerramento favorável</div></label>
+<label class="ci crd" onclick="tg('ms-sac-8')"><input type="checkbox" id="ms-sac-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Monitoramento de reputação — score, causas de queda, ações corretivas</div></label>
+<label class="ci crd" onclick="tg('ms-sac-9')"><input type="checkbox" id="ms-sac-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Fila de atendimento supervisionada dentro do SLA</div></label>
+      </div>
+      <div class="phase">Junho · Mês 3</div>
+      <div class="cl">
+<label class="ci crd" onclick="tg('ms-sac-10')"><input type="checkbox" id="ms-sac-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Gestão completa de fila e reputação com total autonomia</div></label>
+<label class="ci crd" onclick="tg('ms-sac-11')"><input type="checkbox" id="ms-sac-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — Relatório SLA + 5 cases comentados + plano de melhoria (até 30/Jul)</strong></div></label>
+      </div>
+    </div>
+  </div>
+  <div id="ap-vend" class="apane">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px"><div><div class="ct">Vendas / Expansão Comercial</div><div class="cs">Prospecção, proposta e crescimento da carteira</div></div><span class="b bam">Assistente Comercial</span></div>
+      <div class="phase" style="margin-top:0">Abril · Mês 1</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('ms-vend-1')"><input type="checkbox" id="ms-vend-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Onboarding DB1 + Anytools + Marca Seleta</div></label>
+<label class="ci cam" onclick="tg('ms-vend-2')"><input type="checkbox" id="ms-vend-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Portfólio de serviços — KAM, Backoffice, SAC, implantação AnyMarket</div></label>
+<label class="ci cam" onclick="tg('ms-vend-3')"><input type="checkbox" id="ms-vend-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">ICP e segmentação — cliente ideal, sellers qualificados, mercados prioritários</div></label>
+<label class="ci cam" onclick="tg('ms-vend-4')"><input type="checkbox" id="ms-vend-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Prospecção outbound — LinkedIn, cold outreach, scripts e cadências</div></label>
+<label class="ci cam" onclick="tg('ms-vend-5')"><input type="checkbox" id="ms-vend-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Indicadores: pipeline, conversão, ticket médio, churn, receita recorrente</div></label>
+      </div>
+      <div class="phase">Maio · Mês 2</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('ms-vend-6')"><input type="checkbox" id="ms-vend-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Discovery e diagnóstico inicial do prospect</div></label>
+<label class="ci cam" onclick="tg('ms-vend-7')"><input type="checkbox" id="ms-vend-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Elaboração de proposta comercial — template, personalização, pricing</div></label>
+<label class="ci cam" onclick="tg('ms-vend-8')"><input type="checkbox" id="ms-vend-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Negociação e fechamento — objeções, BANT, follow-up</div></label>
+<label class="ci cam" onclick="tg('ms-vend-9')"><input type="checkbox" id="ms-vend-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Gestão de pipeline no CRM — registro, etapas, forecast, relatório semanal</div></label>
+      </div>
+      <div class="phase">Junho · Mês 3</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('ms-vend-10')"><input type="checkbox" id="ms-vend-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Ciclo comercial completo — 3 leads reais (prospecção → fechamento)</div></label>
+<label class="ci cam" onclick="tg('ms-vend-11')"><input type="checkbox" id="ms-vend-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — Pipeline (10+ leads) + proposta formalizada + análise (até 30/Jul)</strong></div></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-ia">
+  <div class="sh"><div><h2>Trilha de IA Corporativa</h2><p>S1–S12 · 7/Mai a 23/Jul · Prazo: 30/Jul/2026</p></div></div>
+  <div class="sp"><span>Progresso (S1–S12)</span><div class="bt"><div class="bf" id="bia2" style="background:var(--am);width:0%"></div></div><div class="spp" id="pia2" style="color:var(--am)">0%</div></div>
+  <div class="ib iba">Trilha corporativa — toda a empresa. Prazo fatal: <strong>30/Jul/2026</strong>.</div>
+  <div class="card">
+    <div class="phase" style="margin-top:0">Fundação · S1–S3</div>
+    <div class="cl">
+<label class="ci cam" onclick="tg('ia-s1')"><input type="checkbox" id="ia-s1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S1 · 07/Mai — Kickoff + Mapeamento</strong><small>Diagnóstico de maturidade em IA; mapeamento de fluxos prioritários de cada área</small></div></label>
+<label class="ci cam" onclick="tg('ia-s2')"><input type="checkbox" id="ia-s2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S2 · 14/Mai — Prompt Engineering</strong><small>Few-shot, chain-of-thought; prompts aplicados às operações reais</small></div></label>
+<label class="ci cam" onclick="tg('ia-s3')"><input type="checkbox" id="ia-s3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S3 · 21/Mai — Contexto + Skills</strong><small>Construção de contextos para agentes; definição de skills por área operacional</small></div></label>
+    </div>
+    <div class="phase">Adoção Guiada · S4–S7</div>
+    <div class="cl">
+<label class="ci cam" onclick="tg('ia-s4')"><input type="checkbox" id="ia-s4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S4 · 28/Mai — IA em 100% dos fluxos</strong><small>Inserir IA nos fluxos operacionais reais de cada área</small></div></label>
+<label class="ci cam" onclick="tg('ia-s5')"><input type="checkbox" id="ia-s5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S5 · 04/Jun — RAG e Bases de conhecimento</strong><small>Retrieval-Augmented Generation; base de conhecimento interna</small></div></label>
+<label class="ci cam" onclick="tg('ia-s6')"><input type="checkbox" id="ia-s6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S6 · 11/Jun — Agentes completos</strong><small>Construção de agentes para tarefas recorrentes; integração com ferramentas</small></div></label>
+<label class="ci cam" onclick="tg('ia-s7')"><input type="checkbox" id="ia-s7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S7 · 18/Jun — Piloto + Reorganização</strong><small>Deploy de pelo menos 1 agente por área em operação real</small></div></label>
+    </div>
+    <div class="phase">Escala · S8–S10</div>
+    <div class="cl">
+<label class="ci cam" onclick="tg('ia-s8')"><input type="checkbox" id="ia-s8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S8 · 25/Jun — Automação</strong><small>Automação de processos repetitivos; métricas de ganho operacional</small></div></label>
+<label class="ci cam" onclick="tg('ia-s9')"><input type="checkbox" id="ia-s9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S9 · 02/Jul — Governança de IA</strong><small>Políticas de uso responsável, auditoria, segurança e privacidade</small></div></label>
+<label class="ci cam" onclick="tg('ia-s10')"><input type="checkbox" id="ia-s10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S10 · 09/Jul — Times + Agentes</strong><small>Estrutura de times AI-first; papéis humanos e agentes</small></div></label>
+    </div>
+    <div class="phase">Cultura · S11–S12</div>
+    <div class="cl">
+<label class="ci cam" onclick="tg('ia-s11')"><input type="checkbox" id="ia-s11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S11 · 16/Jul — Onboarding AI First</strong></div></label>
+<label class="ci cam" onclick="tg('ia-s12')"><input type="checkbox" id="ia-s12"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>S12 · 23/Jul — Fechamento + Showcase</strong><small>Retrospectiva, showcase de resultados, portfólio de agentes implementados</small></div></label>
+    </div>
+    <div style="margin-top:12px;padding:10px 14px;background:var(--rd-bg);border:1px solid rgba(232,72,72,.2);border-radius:var(--rs)"><span style="font-size:13px;font-weight:700;color:var(--rd)">⚑ Prazo: 30/Jul/2026 — S1–S12 concluídos + 1 agente implementado na área</span></div>
+  </div>
+</div>
+
+<div class="panel" id="panel-n8n">
+  <div class="sh"><div><h2>Automação com N8N</h2><p>Formação Alura · Prazo: 15/Jul · 🏆 Hackathon: 17/Jul</p></div></div>
+  <div class="sp"><span>Progresso (aulas + hackathon)</span><div class="bt"><div class="bf" id="bn8n2" style="background:var(--pu);width:0%"></div></div><div class="spp" id="pn8n2" style="color:var(--pu)">0%</div></div>
+  <div class="hcard"><h3 style="font-size:15px;font-weight:700">🏆 Hackathon — 17/Jul/2026</h3><p style="margin-top:6px;color:var(--tx2);font-size:13px">Apresentação pública de automação com IA. Obrigatório para todos. 10 min + 5 min perguntas.</p></div>
+  <div class="card">
+    <div class="phase" style="margin-top:0">Módulo 1 — Modelagem de fluxos</div>
+    <div class="cl">
+<label class="ci cpu" onclick="tg('n8n-1')"><input type="checkbox" id="n8n-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">29/Abr — Análise de processos · 49min</div></label>
+<label class="ci cpu" onclick="tg('n8n-2')"><input type="checkbox" id="n8n-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">06/Mai — Fundamentos da automação · 45min</div></label>
+<label class="ci cpu" onclick="tg('n8n-3')"><input type="checkbox" id="n8n-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">13/Mai — Tomada de decisão e ramificação · 43min</div></label>
+<label class="ci cpu" onclick="tg('n8n-4')"><input type="checkbox" id="n8n-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">20/Mai — Padronização de comunicação + Agentes de IA · 49min</div></label>
+    </div>
+    <div class="phase">Módulo 2 — APIs REST</div>
+    <div class="cl">
+<label class="ci cpu" onclick="tg('n8n-5')"><input type="checkbox" id="n8n-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">27/Mai — Conexão com APIs próprias + Busca de informações · 35min</div></label>
+<label class="ci cpu" onclick="tg('n8n-6')"><input type="checkbox" id="n8n-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">03/Jun — Tipos de requisições HTTP + Filtros de informação · 47min</div></label>
+<label class="ci cpu" onclick="tg('n8n-7')"><input type="checkbox" id="n8n-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">10/Jun — Padrão REST + Bate-papo sobre aprendizados · 50min</div></label>
+    </div>
+    <div class="phase">Módulo 3 — Multiagentes</div>
+    <div class="cl">
+<label class="ci cpu" onclick="tg('n8n-8')"><input type="checkbox" id="n8n-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">17/Jun — Por dentro dos agentes + Agentes especialistas 1 · 41min</div></label>
+<label class="ci cpu" onclick="tg('n8n-9')"><input type="checkbox" id="n8n-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">24/Jun — Agentes especialistas 2 + Orquestração de agentes 1 · 45min</div></label>
+<label class="ci cpu" onclick="tg('n8n-10')"><input type="checkbox" id="n8n-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">01/Jul — Orquestração de agentes 2 · 40min</div></label>
+<label class="ci cpu" onclick="tg('n8n-11')"><input type="checkbox" id="n8n-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">08/Jul — Arquitetura multiagente + Modularização de agentes · 56min</div></label>
+    </div>
+    <div class="phase">Conclusão e Hackathon</div>
+    <div class="cl">
+<label class="ci cgn" onclick="tg('n8n-12')"><input type="checkbox" id="n8n-12"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>09/Jul — Sala de reunião: troca de aprendizados</strong></div></label>
+<label class="ci cgn" onclick="tg('n8n-13')"><input type="checkbox" id="n8n-13"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>Projeto de automação documentado — até 15/Jul</strong></div></label>
+<label class="ci cpu" onclick="tg('n8n-14')"><input type="checkbox" id="n8n-14"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>🏆 17/Jul — Hackathon: apresentação ao vivo realizada</strong></div></label>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-pdi">
+  <div class="sh"><div><h2>PDI Anytools</h2><p>Início: 01/Jun/2026 · Eng: 31/Out · Serv/Neg: 31/Ago</p></div></div>
+  <div class="sp"><span id="pdilbl">Progresso (path selecionado)</span><div class="bt"><div class="bf" id="bpdi2" style="background:var(--gn);width:0%"></div></div><div class="spp" id="ppdi2" style="color:var(--gn)">0%</div></div>
+  <div class="ib ibg">Selecione o path escolhido pelo estagiário.</div>
+  <div class="g3" id="popts">
+    <div class="po eng on" onclick="selP('eng',this)"><h4>💻 Engenharia</h4><p>DevOps (Uni421) + Formação completa Alura · deadline: 31/Out</p></div>
+    <div class="po serv" onclick="selP('serv',this)"><h4>🎧 Serviços</h4><p>Suporte técnico, onboarding e atendimento · deadline: 31/Ago</p></div>
+    <div class="po neg" onclick="selP('neg',this)"><h4>💼 Negócios</h4><p>Comercial, CS, PM e estratégia · deadline: 31/Ago</p></div>
+  </div>
+
+  <div class="ppane on" id="pp-eng">
+    <!-- FASE 1: DevOps I Aprendiz -->
+    <div class="card">
+      <div class="ct" style="display:flex;align-items:center;gap:8px"><span class="b btl">Fase 1</span> DevOps I Aprendiz — Uni421</div>
+      <div class="cs">Início: <strong>01/Jun/2026</strong> · Deadline: <strong>31/Ago/2026</strong> · Duração: 3h 08min · 5 conteúdos · Aproveitamento mínimo: 75%</div>
+      <div class="ib ibtl" style="margin-bottom:10px">Trilha disponível na plataforma <strong>Uni421</strong> (uni421.com.br). Mínimo de 75% de aproveitamento por conteúdo para conclusão.</div>
+      <div class="cl">
+<label class="ci ctl" onclick="tg('pdi-eng-dv-1')"><input type="checkbox" id="pdi-eng-dv-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>1.1 Introdução ao DevOps</strong><small>Curso · 00h 10min · Sequência: 1 · Peso: 1</small></div></label>
+<label class="ci ctl" onclick="tg('pdi-eng-dv-2')"><input type="checkbox" id="pdi-eng-dv-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>1.2 Administração de Servidores e Infraestrutura</strong><small>Curso · 00h 35min · Sequência: 2 · Peso: 1</small></div></label>
+<label class="ci ctl" onclick="tg('pdi-eng-dv-3')"><input type="checkbox" id="pdi-eng-dv-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>1.3 Automação e Shell Scripting</strong><small>Curso · 00h 21min · Sequência: 3 · Peso: 1</small></div></label>
+<label class="ci ctl" onclick="tg('pdi-eng-dv-4')"><input type="checkbox" id="pdi-eng-dv-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>1.4 Fundamentos de Versionamento e Controle de Código</strong><small>Curso · 00h 20min · Sequência: 4 · Peso: 1</small></div></label>
+<label class="ci ctl" onclick="tg('pdi-eng-dv-5')"><input type="checkbox" id="pdi-eng-dv-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>1.5 Conceitos de Conteiner</strong><small>Curso · 01h 42min · Sequência: 5 · Peso: 1</small></div></label>
+      </div>
+    </div>
+
+    <!-- FASE 2: Formação Alura -->
+    <div class="card">
+      <div class="ct" style="display:flex;align-items:center;gap:8px"><span class="b bbl">Fase 2</span> Formação Completa — Alura / plataforma a critério</div>
+      <div class="cs">Início: <strong>01/Ago/2026</strong> · Deadline: <strong>31/Out/2026</strong> · 4 módulos · 71 itens</div>
+      <div class="ib ibb" style="margin-bottom:14px">O conteúdo pode ser estudado na Alura ou em outra plataforma à escolha do estagiário — o aprendizado é o que importa.</div>
+
+      <div class="sph">A · Agilidade</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-ag-1')"><input type="checkbox" id="pdi-eng-ag-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Gestão Ágil: explorando conceitos da agilidade</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-2')"><input type="checkbox" id="pdi-eng-ag-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Scrum: agilidade em seu projeto</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-3')"><input type="checkbox" id="pdi-eng-ag-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Kanban: marque o ritmo com cadências</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-4')"><input type="checkbox" id="pdi-eng-ag-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Ferramentas para agilidade: visão geral sobre controle de projetos e produtos</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-5')"><input type="checkbox" id="pdi-eng-ag-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Práticas Ágeis: construa um ambiente ágil</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-6')"><input type="checkbox" id="pdi-eng-ag-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Equipes ágeis: organizando os papéis em uma equipe</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-7')"><input type="checkbox" id="pdi-eng-ag-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Métricas Ágeis: como medir resultados em um Ambiente Ágil</div></label>
+<label class="ci" onclick="tg('pdi-eng-ag-8')"><input type="checkbox" id="pdi-eng-ag-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">OKR: construindo metas ágeis</div></label>
+      </div>
+
+      <div class="sph">B · Soft Skills / Produtividade</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-ss-1')"><input type="checkbox" id="pdi-eng-ss-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Hábitos: da produtividade às metas pessoais</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-2')"><input type="checkbox" id="pdi-eng-ss-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Produtividade: otimizando sua rotina com inteligência artificial</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-3')"><input type="checkbox" id="pdi-eng-ss-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Comunicação não violenta: consciência para agir</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-4')"><input type="checkbox" id="pdi-eng-ss-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Comunicação assertiva: reduzindo conflitos e frustrações</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-5')"><input type="checkbox" id="pdi-eng-ss-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Feedback efetivo: utilizando ferramentas para comunicação transformadora</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-6')"><input type="checkbox" id="pdi-eng-ss-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Inteligência emocional: práticas para o cotidiano</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-7')"><input type="checkbox" id="pdi-eng-ss-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Princípios do trabalho em equipe: relações colaborativas</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-8')"><input type="checkbox" id="pdi-eng-ss-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Relacionamento interpessoal: aprenda a lidar melhor com você e com o outro</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-9')"><input type="checkbox" id="pdi-eng-ss-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Tomada de decisão: pensar, analisar e agir</div></label>
+<label class="ci" onclick="tg('pdi-eng-ss-10')"><input type="checkbox" id="pdi-eng-ss-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Storytelling: visão de negócios e desenvolvimento pessoal</div></label>
+      </div>
+
+      <div class="sph">C · Programa Angular — Front-end</div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">C1 · Lógica de Programação</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-lp-1')"><input type="checkbox" id="pdi-eng-lp-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Lógica de programação: mergulhe em programação com JavaScript</div></label>
+<label class="ci" onclick="tg('pdi-eng-lp-2')"><input type="checkbox" id="pdi-eng-lp-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Lógica de programação: explore funções e listas</div></label>
+<label class="ci" onclick="tg('pdi-eng-lp-3')"><input type="checkbox" id="pdi-eng-lp-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Lógica de programação: praticando com desafios</div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">C2 · HTML e CSS — Base essencial do Front-end</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-ht-1')"><input type="checkbox" id="pdi-eng-ht-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">HTML e CSS para projetos web<small>Trilha completa</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-ht-2')"><input type="checkbox" id="pdi-eng-ht-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">HTML e CSS: responsividade em layouts</div></label>
+<label class="ci" onclick="tg('pdi-eng-ht-3')"><input type="checkbox" id="pdi-eng-ht-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">HTML e CSS: formulários, SEO e acessibilidade</div></label>
+<label class="ci" onclick="tg('pdi-eng-ht-4')"><input type="checkbox" id="pdi-eng-ht-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">HTML e CSS: ambiente, estrutura e estilo</div></label>
+<label class="ci" onclick="tg('pdi-eng-ht-5')"><input type="checkbox" id="pdi-eng-ht-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">SASS com Vite: otimizando e modularizando seu CSS</div></label>
+<label class="ci" onclick="tg('pdi-eng-ht-6')"><input type="checkbox" id="pdi-eng-ht-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">SASS e CSS: estilizando um site</div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">C3 · TypeScript</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-ts-1')"><input type="checkbox" id="pdi-eng-ts-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Aplique TypeScript no front-end<small>Trilha</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-ts-2')"><input type="checkbox" id="pdi-eng-ts-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">TypeScript: o que é, diferenças para o JS e como começar a aprender<small>Artigo</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-ts-3')"><input type="checkbox" id="pdi-eng-ts-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Melhore sua experiência de desenvolvimento com TypeScript<small>Trilha</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-ts-4')"><input type="checkbox" id="pdi-eng-ts-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">TypeScript: construção de uma API com tipagem segura</div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">C4 · Angular</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-an-1')"><input type="checkbox" id="pdi-eng-an-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular 19: primeiros passos<small>Trilha</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-an-2')"><input type="checkbox" id="pdi-eng-an-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: cursos de testes automatizados para garantir a qualidade da aplicação<small>Trilha</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-an-3')"><input type="checkbox" id="pdi-eng-an-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: design de componentes com acessibilidade</div></label>
+<label class="ci" onclick="tg('pdi-eng-an-4')"><input type="checkbox" id="pdi-eng-an-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: avance com service workers, signals e SSR<small>Trilha</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-an-5')"><input type="checkbox" id="pdi-eng-an-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: evoluindo com formulários e roteamento</div></label>
+<label class="ci" onclick="tg('pdi-eng-an-6')"><input type="checkbox" id="pdi-eng-an-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: gerenciando estado com Signals</div></label>
+<label class="ci" onclick="tg('pdi-eng-an-7')"><input type="checkbox" id="pdi-eng-an-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Angular 19: acessibilidade em formulários</div></label>
+<label class="ci" onclick="tg('pdi-eng-an-8')"><input type="checkbox" id="pdi-eng-an-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular: transformando uma aplicação web em PWA</div></label>
+<label class="ci" onclick="tg('pdi-eng-an-9')"><input type="checkbox" id="pdi-eng-an-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Angular e Supabase: refinando a aplicação com SSR</div></label>
+      </div>
+
+      <div class="sph">D · Programa Java — Back-end</div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">D1 · Conhecimentos essenciais em Java</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-jv-1')"><input type="checkbox" id="pdi-eng-jv-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Java: criando a sua primeira aplicação</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-2')"><input type="checkbox" id="pdi-eng-jv-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Java: aplicando a Orientação a Objetos</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-3')"><input type="checkbox" id="pdi-eng-jv-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Java: trabalhando com listas e coleções de dados</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-4')"><input type="checkbox" id="pdi-eng-jv-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: Orientação a Objetos com classes, atributos e métodos</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-5')"><input type="checkbox" id="pdi-eng-jv-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: herança, polimorfismo e interfaces</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-6')"><input type="checkbox" id="pdi-eng-jv-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: variáveis e tipos</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-7')"><input type="checkbox" id="pdi-eng-jv-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: condicionais if e else</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-8')"><input type="checkbox" id="pdi-eng-jv-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: laços for e while</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-9')"><input type="checkbox" id="pdi-eng-jv-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: data e hora</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-10')"><input type="checkbox" id="pdi-eng-jv-10"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: encapsulamento</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-11')"><input type="checkbox" id="pdi-eng-jv-11"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: Strings e Regex</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-12')"><input type="checkbox" id="pdi-eng-jv-12"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Praticando Java: coleções e streams</div></label>
+<label class="ci" onclick="tg('pdi-eng-jv-13')"><input type="checkbox" id="pdi-eng-jv-13"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Java: consumindo API, gravando arquivos e lidando com erros</div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">D2 · Criando APIs com Spring</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-sp-1')"><input type="checkbox" id="pdi-eng-sp-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">O que é o Spring Framework?<small>Alura+</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-sp-2')"><input type="checkbox" id="pdi-eng-sp-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">O que é Spring Boot e como dar os seus primeiros passos<small>Artigo</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-sp-3')"><input type="checkbox" id="pdi-eng-sp-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Spring Boot 3: desenvolva uma API Rest em Java</div></label>
+<label class="ci" onclick="tg('pdi-eng-sp-4')"><input type="checkbox" id="pdi-eng-sp-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Spring Boot 3: documente, teste e prepare uma API para o deploy</div></label>
+<label class="ci" onclick="tg('pdi-eng-sp-5')"><input type="checkbox" id="pdi-eng-sp-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Swagger: documentando suas APIs</div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">D3 · Testes</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-tt-1')"><input type="checkbox" id="pdi-eng-tt-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Agilidade e TDD: um dia no desenvolvimento de software</div></label>
+<label class="ci" onclick="tg('pdi-eng-tt-2')"><input type="checkbox" id="pdi-eng-tt-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Boas práticas de programação: automatizando testes com Java</div></label>
+<label class="ci" onclick="tg('pdi-eng-tt-3')"><input type="checkbox" id="pdi-eng-tt-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">O que é Test-Driven Development (TDD)?<small>Alura+</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-tt-4')"><input type="checkbox" id="pdi-eng-tt-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">TDD e sua influência no acoplamento e coesão<small>Artigo</small></div></label>
+      </div>
+      <div class="phase" style="font-size:10px;color:var(--bl);margin-top:8px">D4 · Boas práticas</div>
+      <div class="cl">
+<label class="ci" onclick="tg('pdi-eng-bp-1')"><input type="checkbox" id="pdi-eng-bp-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Clean Code: definição, exemplos e casos de uso<small>Artigo</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-bp-2')"><input type="checkbox" id="pdi-eng-bp-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">SOLID: o que é e quais os 5 princípios da Programação Orientada a Objetos (POO)<small>Artigo</small></div></label>
+<label class="ci" onclick="tg('pdi-eng-bp-3')"><input type="checkbox" id="pdi-eng-bp-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Java e refatoração: melhorando códigos com boas práticas</div></label>
+<label class="ci" onclick="tg('pdi-eng-bp-4')"><input type="checkbox" id="pdi-eng-bp-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Boas práticas de programação: melhore o código de uma API Java</div></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <div class="ppane" id="pp-serv">
+    <div class="card">
+      <div class="ct">Serviços — (Jun–Ago · ~120h)</div>
+      <p style="font-size:12px;color:var(--tx2);margin-bottom:12px">Suporte técnico, onboarding e atendimento especializado no ecossistema Anytools</p>
+      <div class="phase" style="margin-top:0">Junho · Fundamentos</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('pdi-serv-1')"><input type="checkbox" id="pdi-serv-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Fundamentos de suporte técnico — tipos de ticket, SLA, escalonamento N1/N2/N3<small>~20h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-2')"><input type="checkbox" id="pdi-serv-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">AnyMarket visão técnica — integrações, APIs, erros comuns em hubs<small>~12h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-3')"><input type="checkbox" id="pdi-serv-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Comunicação técnica consultiva — explicar conceitos a não-técnicos<small>~8h</small></div></label>
+      </div>
+      <div class="phase">Julho · Onboarding e Ferramentas</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('pdi-serv-4')"><input type="checkbox" id="pdi-serv-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Processo de onboarding de clientes — etapas, checklists, go-live<small>~20h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-5')"><input type="checkbox" id="pdi-serv-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">CRM e ferramentas — HubSpot Service Hub, Zendesk, base de conhecimento<small>~15h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-6')"><input type="checkbox" id="pdi-serv-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Métricas de serviço — CSAT, NPS, TTR, First Contact Resolution<small>~5h</small></div></label>
+      </div>
+      <div class="phase">Agosto · Especialização</div>
+      <div class="cl">
+<label class="ci cgn" onclick="tg('pdi-serv-7')"><input type="checkbox" id="pdi-serv-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Cases complexos — migração, integrações customizadas, grandes operações<small>~15h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-8')"><input type="checkbox" id="pdi-serv-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Feedback → produto — documentar dor de cliente como requisito<small>~10h</small></div></label>
+<label class="ci cgn" onclick="tg('pdi-serv-9')"><input type="checkbox" id="pdi-serv-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — documentação de onboarding + plano de melhoria (até 31/Ago)</strong></div></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEGÓCIOS -->
+  <div class="ppane" id="pp-neg">
+    <div class="card">
+      <div class="ct">Negócios — (Jun–Ago · ~120h)</div>
+      <p style="font-size:12px;color:var(--tx2);margin-bottom:12px">Comercial, CS, PM e estratégia de negócios no ecossistema Anytools/AnyMarket</p>
+      <div class="phase" style="margin-top:0">Junho · Comercial e CS</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('pdi-neg-1')"><input type="checkbox" id="pdi-neg-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Vendas B2B — ciclo, SPIN selling, qualificação BANT, CRM HubSpot<small>~15h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-2')"><input type="checkbox" id="pdi-neg-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Customer Success — jornada, health score, churn, expansão de receita<small>~15h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-3')"><input type="checkbox" id="pdi-neg-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Posicionamento Anytools — personas, concorrência, proposta de valor<small>~10h</small></div></label>
+      </div>
+      <div class="phase">Julho · Produto e Dados</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('pdi-neg-4')"><input type="checkbox" id="pdi-neg-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Product Management básico — discovery, roadmap, priorização, go-to-market<small>~20h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-5')"><input type="checkbox" id="pdi-neg-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Análise de dados para negócios — MRR, ARR, LTV, CAC, NRR<small>~10h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-6')"><input type="checkbox" id="pdi-neg-6"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Ágil para negócios — OKRs, Scrum para times de produto e CS<small>~10h</small></div></label>
+      </div>
+      <div class="phase">Agosto · Aplicação</div>
+      <div class="cl">
+<label class="ci cam" onclick="tg('pdi-neg-7')"><input type="checkbox" id="pdi-neg-7"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Expansão de receita — upsell/cross-sell, análise de carteira<small>~15h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-8')"><input type="checkbox" id="pdi-neg-8"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx">Storytelling com dados — apresentações executivas, tomada de decisão<small>~10h</small></div></label>
+<label class="ci cam" onclick="tg('pdi-neg-9')"><input type="checkbox" id="pdi-neg-9"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><strong>✅ Entregável — análise de oportunidade de mercado Anytools (até 31/Ago)</strong></div></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-ent">
+  <div class="sh"><div><h2>Entregas &amp; Certificado</h2><p>Todos os entregáveis e marcos finais do programa</p></div></div>
+  <div class="sp"><span>Progresso (entregas)</span><div class="bt"><div class="bf" id="bent2" style="background:var(--rd);width:0%"></div></div><div class="spp" id="pent2" style="color:var(--rd)">0%</div></div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:12px">Entregáveis obrigatórios</div>
+    <div class="cl">
+<label class="ci" onclick="tg('ent-1')"><input type="checkbox" id="ent-1"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bbl" style="margin-right:6px">E1</span><strong>Entregável da área Marca Seleta — submetido ao time</strong><small>KAM: relatório · Backoffice: catálogo · SAC: SLA+cases · Vendas: pipeline · Prazo: 30/Jul</small></div></label>
+<label class="ci cpu" onclick="tg('ent-2')"><input type="checkbox" id="ent-2"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bpu" style="margin-right:6px">E2</span><strong>Projeto N8N documentado e entregue</strong><small>Automação funcional + documentação · Prazo: 15/Jul</small></div></label>
+<label class="ci cpu" onclick="tg('ent-hack')"><input type="checkbox" id="ent-hack"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bpu" style="margin-right:6px">🏆</span><strong>Hackathon — apresentação realizada em 17/Jul</strong></div></label>
+<label class="ci cam" onclick="tg('ent-3')"><input type="checkbox" id="ent-3"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bam" style="margin-right:6px">E3</span><strong>Trilha de IA concluída — S1 a S12 + 1 agente implementado</strong><small>Deadline: 30/Jul</small></div></label>
+<label class="ci" onclick="tg('ent-4')"><input type="checkbox" id="ent-4"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bgr" style="margin-right:6px">E4</span><strong>Autoavaliação + Formulário PDI preenchido</strong><small>Prazo: 30/Jul</small></div></label>
+<label class="ci cgn" onclick="tg('ent-5')"><input type="checkbox" id="ent-5"><div class="ck"><svg viewBox="0 0 12 10" width="10" height="10" fill="none"><polyline points="1,5 4,8 11,1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ctx"><span class="b bgn" style="margin-right:6px">E5</span><strong>Entregável do path Anytools concluído</strong><small>Eng.: DevOps+Alura · Serv./Neg.: entregável específico · Prazo: Eng. 31/Out · demais 31/Ago</small></div></label>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:12px">Avaliação final — semana de 23–27/Jul</div>
+    <div class="row"><span><span class="b bbl" style="margin-right:6px">40%</span>Prova teórica escrita — 25 questões · 90 min</span></div>
+    <div class="row"><span><span class="b bgn" style="margin-right:6px">40%</span>Entregável prático da área — apresentado ao time</span></div>
+    <div class="row"><span><span class="b bam" style="margin-right:6px">20%</span>Avaliação comportamental 360° — gestor + pares</span></div>
+    <div style="margin-top:12px;padding:10px;background:var(--bg3);border-radius:var(--rs)"><span style="font-size:13px;font-weight:700">Nota mínima: 7,0 / 10,0 · Recuperação em até 15 dias · Certificado emitido até 30/Jul</span></div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:12px">Marcos cronológicos</div>
+    <div class="ms"><div class="mi" style="background:var(--bg3)">📅</div><div class="md"><strong>01/Jun — PDI Anytools inicia</strong><p>Estagiário formaliza o path (Engenharia / Serviços / Negócios)</p></div><div class="mdt">Jun</div></div>
+    <div class="ms"><div class="mi" style="background:var(--bg3)">💬</div><div class="md"><strong>09/Jul — Troca de aprendizados N8N</strong><p>Sessão coletiva Alura — ensaio antes do Hackathon</p></div><div class="mdt">09/Jul</div></div>
+    <div class="ms"><div class="mi" style="background:var(--bg3)">⚑</div><div class="md"><strong>15/Jul — Prazo de conclusão N8N</strong><p>Todas as aulas + projeto documentado</p></div><div class="mdt hot">15/Jul</div></div>
+    <div class="ms"><div class="mi" style="background:var(--pu-bg)">🏆</div><div class="md"><strong>17/Jul — Hackathon</strong><p>Apresentação de automação com IA · obrigatório para todos</p></div><div class="mdt hot">17/Jul</div></div>
+    <div class="ms"><div class="mi" style="background:var(--bg3)">📝</div><div class="md"><strong>23–27/Jul — Prova final + entregável</strong><p>Avaliação teórica + prático + 360°</p></div><div class="mdt">Sem 12</div></div>
+    <div class="ms"><div class="mi" style="background:var(--rd-bg)">🎓</div><div class="md"><strong>30/Jul — Deadline geral (T1, T2, T3) + Certificado</strong><p>S12 concluído · Certificado emitido para aprovados (nota ≥ 7,0)</p></div><div class="mdt hot">30/Jul</div></div>
+    <div class="ms"><div class="mi" style="background:var(--tl-bg)">⚑</div><div class="md"><strong>31/Ago — DevOps I Aprendiz + PDI Serv/Neg</strong><p>Conclusão da Fase 1 Engenharia + paths Serviços e Negócios</p></div><div class="mdt hot">31/Ago</div></div>
+    <div class="ms"><div class="mi" style="background:var(--gn-bg)">🚀</div><div class="md"><strong>31/Out — Formação Alura Engenharia concluída</strong><p>Agilidade · Soft Skills · Angular · Java — Fase 2 Engenharia</p></div><div class="mdt hot">31/Out</div></div>
+  </div>
+</div>
+
+
+<div class="panel" id="panel-360">
+  <div class="sh">
+    <div>
+      <h2>Avaliação Comportamental 360°</h2>
+      <p>Cartilha de comportamentos esperados · Avaliação realizada pelos analistas da Marca Seleta · Peso: 20% da nota final</p>
+    </div>
+    <span class="b bam" style="align-self:flex-start">Referência · Sem preenchimento</span>
+  </div>
+  <div class="ib iba" style="font-size:13px">
+    <strong>Para o estagiário:</strong> este é o guia de comportamentos que baliza sua atuação durante o programa. Internalize cada competência — elas serão observadas diariamente pelos analistas e compõem 20% da sua nota final. Não há formulário para preencher aqui.
+  </div>
+  <div class="ib ibg" style="font-size:12px">
+    <strong>Para os analistas:</strong> a avaliação 360° será realizada separadamente, na semana de 23–27/Jul. Observe os comportamentos abaixo ao longo dos 3 meses de convivência.
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px">
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--bl);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--bl-bg);border:1.5px solid var(--bl);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--bl)">1</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Percepção e Capacidade Analítica</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Habilidade de organizar e realizar síntese de informações e dados de forma crítica, trazendo soluções e alternativas para os desafios apontados. Facilidade em correlacionar ideias gerando percepções de valor para tomadas de decisão.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bbl" style="font-size:10px">Síntese crítica</span>
+        <span class="b bbl" style="font-size:10px">Correlação de ideias</span>
+        <span class="b bbl" style="font-size:10px">Tomada de decisão</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--tl);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--tl-bg);border:1.5px solid var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--tl)">2</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Comunicação Assertiva</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade de comunicar-se de forma clara, objetiva e, fundamentalmente, compreensiva — garantindo o entendimento de quem está ouvindo. Facilidade em compartilhar ideias, pensamentos e informações relevantes para o time.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b btl" style="font-size:10px">Clareza</span>
+        <span class="b btl" style="font-size:10px">Objetividade</span>
+        <span class="b btl" style="font-size:10px">Escuta ativa</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--gn);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gn-bg);border:1.5px solid var(--gn);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--gn)">3</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Responsabilidade e Autonomia</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade para planejar e organizar as ações para o trabalho. Antecede-se às suas atividades, possui organização na execução de tarefas, segue as regras e padrões da empresa. Respeita prazos, possui compromisso com as entregas e age de forma proativa e autônoma.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bgn" style="font-size:10px">Proatividade</span>
+        <span class="b bgn" style="font-size:10px">Prazos</span>
+        <span class="b bgn" style="font-size:10px">Organização</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--pu);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--pu-bg);border:1.5px solid var(--pu);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--pu)">4</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Resolução de Problemas</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade de resolver problemas, independente da responsabilidade — ou saber quem procurar para resolvê-lo. Comprometimento com o time, entregas e prazos. Autonomia e responsabilidade para executar o trabalho proposto.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bpu" style="font-size:10px">Iniciativa</span>
+        <span class="b bpu" style="font-size:10px">Comprometimento</span>
+        <span class="b bpu" style="font-size:10px">Criatividade</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--am);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--am-bg);border:1.5px solid var(--am);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--am)">5</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Orientação para Resultados</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Tomada de decisão baseada em atingir ou superar resultados. Capacidade de foco orientada a objetivos propostos, baseando-se no que é importante e prioritário para o fim.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bam" style="font-size:10px">Foco em metas</span>
+        <span class="b bam" style="font-size:10px">Priorização</span>
+        <span class="b bam" style="font-size:10px">Superação</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--rd);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--rd-bg);border:1.5px solid var(--rd);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--rd)">6</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Inteligência Emocional</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Identifica e controla as emoções internas, sabendo manter a calma e o equilíbrio em suas ações e adequando-se às situações adversas no dia a dia. Busca continuamente ampliar o autoconhecimento, demonstrando equilíbrio entre emoção e razão nas relações e decisões.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b brd" style="font-size:10px">Autocontrole</span>
+        <span class="b brd" style="font-size:10px">Equilíbrio</span>
+        <span class="b brd" style="font-size:10px">Autoconhecimento</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--bl);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--bl-bg);border:1.5px solid var(--bl);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--bl)">7</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Postura Investigativa</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Busca de aprendizagem e desenvolvimento constante. Perfil protagonista no processo de ensino e aprendizagem, identificando informações e fatos relevantes para as suas ações.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bbl" style="font-size:10px">Curiosidade</span>
+        <span class="b bbl" style="font-size:10px">Protagonismo</span>
+        <span class="b bbl" style="font-size:10px">Aprendizado contínuo</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--tl);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--tl-bg);border:1.5px solid var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--tl)">8</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Adaptabilidade e Flexibilidade</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade de ser flexível em qualquer ambiente, adaptando-se às mudanças, contornando situações inesperadas, convivendo com as diferenças e encontrando formas de se desenvolver até mesmo nas situações adversas.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b btl" style="font-size:10px">Abertura a mudanças</span>
+        <span class="b btl" style="font-size:10px">Flexibilidade</span>
+        <span class="b btl" style="font-size:10px">Resiliência situacional</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--pu);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--pu-bg);border:1.5px solid var(--pu);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--pu)">9</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Inovação</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade de fazer algo novo ou evoluir algo previamente existente que resolva um problema. Podendo ser incrivelmente disruptivo ou uma simples melhoria — impactando positivamente a vida das pessoas dentro e fora da empresa.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bpu" style="font-size:10px">Criatividade</span>
+        <span class="b bpu" style="font-size:10px">Melhoria contínua</span>
+        <span class="b bpu" style="font-size:10px">Impacto positivo</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--gn);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gn-bg);border:1.5px solid var(--gn);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--gn)">10</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Resiliência</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Habilidade em lidar com problemas de forma adaptável, buscando aprender e identificar alternativas de enfrentamento e solução diante de cenários de mudança. Capacidade de foco em alcançar os objetivos com os recursos disponíveis.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bgn" style="font-size:10px">Persistência</span>
+        <span class="b bgn" style="font-size:10px">Aprendizado na adversidade</span>
+        <span class="b bgn" style="font-size:10px">Foco</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--am);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--am-bg);border:1.5px solid var(--am);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--am)">11</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Visão Sistêmica</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade de entender o negócio e visualizar como suas ações, atividades e atitudes podem influenciar ou interagir com outras áreas da organização e/ou fornecedores e/ou clientes.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b bam" style="font-size:10px">Visão do todo</span>
+        <span class="b bam" style="font-size:10px">Interdependência</span>
+        <span class="b bam" style="font-size:10px">Impacto cruzado</span>
+      </div>
+    </div>
+
+    <div class="c360" style="background:var(--bg2);border:1px solid var(--bd);border-top:3px solid var(--rd);border-radius:var(--r);padding:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--rd-bg);border:1.5px solid var(--rd);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;color:var(--rd)">12</div>
+        <span style="font-size:13px;font-weight:700;color:var(--tx)">Organização e Planejamento</span>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.7">Capacidade para planejar e organizar as atividades nas diferentes fases de evolução de uma tarefa, determinando objetivos, procedimentos, prioridades, prazos e utilização adequada de recursos para o atingimento das metas e resultados.</p>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">
+        <span class="b brd" style="font-size:10px">Planejamento</span>
+        <span class="b brd" style="font-size:10px">Prioridades</span>
+        <span class="b brd" style="font-size:10px">Gestão de recursos</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="ct" style="margin-bottom:10px">Como essa avaliação funciona</div>
+    <div class="row"><span><span class="b bam" style="margin-right:8px">20%</span>Peso na nota final</span><span class="dt">semana de 23–27/Jul</span></div>
+    <div class="row"><span><span class="b bgr" style="margin-right:8px">360°</span>Avaliada pelos analistas da Marca Seleta — gestor + pares</span></div>
+    <div class="row"><span><span class="b bgr" style="margin-right:8px">12</span>Competências observadas ao longo dos 3 meses de programa</span></div>
+    <div class="row"><span><span class="b bgn" style="margin-right:8px">≥ 7,0</span>Nota mínima global para aprovação e emissão do certificado</span></div>
+    <div style="margin-top:12px;padding:10px 14px;background:var(--bg3);border-radius:var(--rs);font-size:12px;color:var(--tx2);line-height:1.7">
+      💡 <strong style="color:var(--tx)">Dica para o estagiário:</strong> estas competências não são avaliadas em um momento pontual — elas são observadas no dia a dia. Chegue comprometido, comunique-se com clareza, cumpra seus prazos, proponha soluções e demonstre vontade de aprender. Esses comportamentos falam por você antes mesmo da avaliação formal.
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-admin">
+  <div class="sh"><div><h2>🔒 Painel Administrativo</h2><p>Gerenciamento de usuários e ranking de progresso</p></div></div>
+  <div class="admin-stats" id="adminStats"></div>
+  <div class="card"><div class="ct" style="margin-bottom:14px">🏆 Ranking de Progresso</div>
+    <div style="overflow-x:auto"><table class="rank-table"><thead><tr><th>#</th><th>Estagiário</th><th>Geral</th><th>MS</th><th>IA</th><th>N8N</th><th>PDI</th><th>Entregas</th></tr></thead><tbody id="rankBody"></tbody></table></div>
+  </div>
+  <div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><div class="ct">👥 Usuários do Sistema</div><button class="btn-add" onclick="openUserModal()">+ Novo Usuário</button></div>
+    <div style="overflow-x:auto"><table class="user-table"><thead><tr><th>Nome</th><th>Email</th><th>Estagiário</th><th>Papel</th><th>Ações</th></tr></thead><tbody id="userBody"></tbody></table></div>
+  </div>
+</div>
+
+</div>
+
+<div class="modal-overlay" id="userModal">
+  <div class="modal-box">
+    <h3><span id="modalTitle">Novo Usuário</span><button class="modal-close" onclick="closeUserModal()">✕</button></h3>
+    <div class="modal-error" id="modalError"></div>
+    <form id="userForm" onsubmit="return saveUser(event)">
+      <input type="hidden" id="editingEmail">
+      <div class="modal-group"><label>Nome completo</label><input type="text" id="uName" placeholder="Nome do usuário" required></div>
+      <div class="modal-group"><label>Email (@db1.com.br)</label><input type="email" id="uEmail" placeholder="usuario@db1.com.br" required></div>
+      <div class="modal-group"><label>Estagiário vinculado</label><select id="uIntern"></select></div>
+      <div class="modal-group"><label id="pwdLabel">Senha</label><input type="password" id="uPassword" placeholder="Mínimo 6 caracteres"></div>
+      <div class="modal-actions"><button type="button" class="btn" onclick="closeUserModal()">Cancelar</button><button type="submit" class="btn" style="background:var(--bl);border-color:var(--bl);color:#fff">Salvar</button></div>
+    </form>
+  </div>
+</div>
+
+<script>
+const INTERNS=['Bruno Andre Fernandes Ortega','Enzo Gabriel Dias Perlato','Guilherme Estevam Araujo','Gustavo Amaro Niehues','Gustavo dos Santos','Kenzo Wilder Yamamoto','Leonardo Amaro Alves Cunha','Lucas Emiliano Lopes Berman','Lucas Henrique Fernandes Soares Da Silva','Luna Halabi Feitosa','Matheus Felipe De Souza Zamferrari','Paola Rodrigues da Silva','Rafael Garcia Ribeiro','Samuel Hungaro da Silva'];
+const KEYS={
+  ms:{kam:['ms-kam-1','ms-kam-2','ms-kam-3','ms-kam-4','ms-kam-5','ms-kam-6','ms-kam-7','ms-kam-8','ms-kam-9','ms-kam-10','ms-kam-11','ms-kam-12'],back:['ms-back-1','ms-back-2','ms-back-3','ms-back-4','ms-back-5','ms-back-6','ms-back-7','ms-back-8','ms-back-9','ms-back-10','ms-back-11'],sac:['ms-sac-1','ms-sac-2','ms-sac-3','ms-sac-4','ms-sac-5','ms-sac-6','ms-sac-7','ms-sac-8','ms-sac-9','ms-sac-10','ms-sac-11'],vend:['ms-vend-1','ms-vend-2','ms-vend-3','ms-vend-4','ms-vend-5','ms-vend-6','ms-vend-7','ms-vend-8','ms-vend-9','ms-vend-10','ms-vend-11']},
+  ia:['ia-s1','ia-s2','ia-s3','ia-s4','ia-s5','ia-s6','ia-s7','ia-s8','ia-s9','ia-s10','ia-s11','ia-s12'],
+  n8n:['n8n-1','n8n-2','n8n-3','n8n-4','n8n-5','n8n-6','n8n-7','n8n-8','n8n-9','n8n-10','n8n-11','n8n-12','n8n-13','n8n-14'],
+  pdi:{
+    eng:['pdi-eng-dv-1','pdi-eng-dv-2','pdi-eng-dv-3','pdi-eng-dv-4','pdi-eng-dv-5','pdi-eng-ag-1','pdi-eng-ag-2','pdi-eng-ag-3','pdi-eng-ag-4','pdi-eng-ag-5','pdi-eng-ag-6','pdi-eng-ag-7','pdi-eng-ag-8','pdi-eng-ss-1','pdi-eng-ss-2','pdi-eng-ss-3','pdi-eng-ss-4','pdi-eng-ss-5','pdi-eng-ss-6','pdi-eng-ss-7','pdi-eng-ss-8','pdi-eng-ss-9','pdi-eng-ss-10','pdi-eng-lp-1','pdi-eng-lp-2','pdi-eng-lp-3','pdi-eng-ht-1','pdi-eng-ht-2','pdi-eng-ht-3','pdi-eng-ht-4','pdi-eng-ht-5','pdi-eng-ht-6','pdi-eng-ts-1','pdi-eng-ts-2','pdi-eng-ts-3','pdi-eng-ts-4','pdi-eng-an-1','pdi-eng-an-2','pdi-eng-an-3','pdi-eng-an-4','pdi-eng-an-5','pdi-eng-an-6','pdi-eng-an-7','pdi-eng-an-8','pdi-eng-an-9','pdi-eng-jv-1','pdi-eng-jv-2','pdi-eng-jv-3','pdi-eng-jv-4','pdi-eng-jv-5','pdi-eng-jv-6','pdi-eng-jv-7','pdi-eng-jv-8','pdi-eng-jv-9','pdi-eng-jv-10','pdi-eng-jv-11','pdi-eng-jv-12','pdi-eng-jv-13','pdi-eng-sp-1','pdi-eng-sp-2','pdi-eng-sp-3','pdi-eng-sp-4','pdi-eng-sp-5','pdi-eng-tt-1','pdi-eng-tt-2','pdi-eng-tt-3','pdi-eng-tt-4','pdi-eng-bp-1','pdi-eng-bp-2','pdi-eng-bp-3','pdi-eng-bp-4'],
+    serv:['pdi-serv-1','pdi-serv-2','pdi-serv-3','pdi-serv-4','pdi-serv-5','pdi-serv-6','pdi-serv-7','pdi-serv-8','pdi-serv-9'],
+    neg:['pdi-neg-1','pdi-neg-2','pdi-neg-3','pdi-neg-4','pdi-neg-5','pdi-neg-6','pdi-neg-7','pdi-neg-8','pdi-neg-9']
+  },
+  ent:['ent-1','ent-2','ent-hack','ent-3','ent-4','ent-5']
+};
+let ci,ca,cp,em=false;
+function gc(){return JSON.parse(localStorage.getItem(ci+'::c')||'{}')}
+function sc(c){localStorage.setItem(ci+'::c',JSON.stringify(c))}
+function buildGrid(){const g=document.getElementById('igrid');g.innerHTML='';INTERNS.forEach(n=>{const b=document.createElement('button');b.className='ibtn'+(n===ci?' on':'');b.dataset.n=n;b.textContent=n;b.onclick=()=>sw(n);g.appendChild(b)})}
+function toggleMenu(){document.getElementById('imenu').classList.toggle('open')}
+function sw(name){ci=name;localStorage.setItem('ci',name);document.getElementById('imenu').classList.remove('open');load()}
+function load(){
+  document.querySelectorAll('.ci input[type="checkbox"]').forEach(el=>{el.checked=false;el.closest('.ci').classList.remove('done')});
+  const c=gc();Object.keys(c).forEach(id=>{if(!c[id])return;const el=document.getElementById(id);if(el){el.checked=true;el.closest('.ci').classList.add('done')}});
+  ca=localStorage.getItem(ci+':a')||'kam';cp=localStorage.getItem(ci+':p')||'eng';
+  document.querySelectorAll('[data-a]').forEach(b=>b.classList.toggle('on',b.dataset.a===ca));
+  document.querySelectorAll('.apane').forEach(p=>p.classList.remove('on'));const ap=document.getElementById('ap-'+ca);if(ap)ap.classList.add('on');
+  document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));const po=document.querySelector('.po.'+cp);if(po)po.classList.add('on');
+  document.querySelectorAll('.ppane').forEach(p=>p.classList.remove('on'));const pp=document.getElementById('pp-'+cp);if(pp)pp.classList.add('on');
+  const amap={kam:'KAM',back:'Backoffice',sac:'SAC',vend:'Vendas'},pmap={eng:'Engenharia',serv:'Serviços',neg:'Negócios'};
+  document.getElementById('mslbl').textContent='Progresso ('+amap[ca]+')';
+  document.getElementById('pdilbl').textContent='Progresso ('+pmap[cp]+')';
+  document.getElementById('icur').textContent=ci;
+  document.querySelectorAll('.ibtn').forEach(b=>b.classList.toggle('on',b.dataset.n===ci));
+  const texts=JSON.parse(localStorage.getItem('et')||'{}');document.querySelectorAll('.ed[data-k]').forEach(el=>{if(texts[el.dataset.k])el.innerHTML=texts[el.dataset.k]});
+  ua();
+}
+function tg(id){const el=document.getElementById(id);if(!el)return;el.checked=!el.checked;el.closest('.ci').classList.toggle('done',el.checked);const c=gc();c[id]=el.checked;sc(c);ua()}
+function pct(ids){const t=ids.length,d=ids.filter(id=>{const e=document.getElementById(id);return e&&e.checked}).length;return t?Math.round(d/t*100):0}
+function sb(bid,pid,v){const b=document.getElementById(bid),p=document.getElementById(pid);if(b)b.style.width=v+'%';if(p)p.textContent=v+'%'}
+function ua(){
+  const m=pct(KEYS.ms[ca]||KEYS.ms.kam),ia=pct(KEYS.ia),n=pct(KEYS.n8n),pd=pct(KEYS.pdi[cp]||KEYS.pdi.eng),en=pct(KEYS.ent);
+  sb('bms','pms',m);sb('bia','pia',ia);sb('bn8n','pn8n',n);sb('bpdi','ppdi',pd);sb('bent','pent',en);
+  sb('bms2','pms2',m);sb('bia2','pia2',ia);sb('bn8n2','pn8n2',n);sb('bpdi2','ppdi2',pd);sb('bent2','pent2',en);
+}
+function sp(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));document.getElementById('panel-'+id).classList.add('on');if(btn)btn.classList.add('on');if(id==='admin')renderAdmin()}
+function selA(a,btn){ca=a;localStorage.setItem(ci+':a',a);document.querySelectorAll('.apane').forEach(p=>p.classList.remove('on'));document.querySelectorAll('[data-a]').forEach(b=>b.classList.remove('on'));const pane=document.getElementById('ap-'+a);if(pane)pane.classList.add('on');if(btn)btn.classList.add('on');const amap={kam:'KAM',back:'Backoffice',sac:'SAC',vend:'Vendas'};document.getElementById('mslbl').textContent='Progresso ('+amap[a]+')';ua()}
+function selP(p,el){cp=p;localStorage.setItem(ci+':p',p);document.querySelectorAll('.ppane').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));const pane=document.getElementById('pp-'+p);if(pane)pane.classList.add('on');if(el)el.classList.add('on');const pmap={eng:'Engenharia',serv:'Serviços',neg:'Negócios'};document.getElementById('pdilbl').textContent='Progresso ('+pmap[p]+')';ua()}
+function toggleEdit(){em=!em;document.body.classList.toggle('emode',em);document.getElementById('ebtn').textContent=em?'💾 Sair da edição':'✏️ Editar textos';document.getElementById('ebtn').classList.toggle('eact',em);const texts=JSON.parse(localStorage.getItem('et')||'{}');if(em){document.querySelectorAll('.ed').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',saveEd)})}else{document.querySelectorAll('.ed').forEach(el=>{el.contentEditable='false';el.removeEventListener('blur',saveEd);if(el.dataset.k)texts[el.dataset.k]=el.innerHTML});localStorage.setItem('et',JSON.stringify(texts))}}
+function saveEd(e){const t=JSON.parse(localStorage.getItem('et')||'{}');if(e.target.dataset.k)t[e.target.dataset.k]=e.target.innerHTML;localStorage.setItem('et',JSON.stringify(t))}
+function resetAll(){if(!confirm('Limpar TODO o progresso de '+ci+'? (Outros estagiários não serão afetados)'))return;localStorage.removeItem(ci+'::c');localStorage.removeItem(ci+':a');localStorage.removeItem(ci+':p');load()}
+// ===== AUTH MANAGER =====
+const AUTH={
+  SK:'auth_users',SS:'auth_session',
+  async hash(s){
+    try{const d=new TextEncoder().encode(s);const b=await crypto.subtle.digest('SHA-256',d);return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+    catch(e){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h)+s.charCodeAt(i)}return'h'+Math.abs(h).toString(36)}
+  },
+  gu(){return JSON.parse(localStorage.getItem(this.SK)||'{}')},
+  su(u){localStorage.setItem(this.SK,JSON.stringify(u))},
+  gs(){try{return JSON.parse(sessionStorage.getItem(this.SS))}catch(e){return null}},
+  ss(s){sessionStorage.setItem(this.SS,JSON.stringify(s))},
+  cs(){sessionStorage.removeItem(this.SS)},
+  async seed(){
+    const u=this.gu();
+    if(!u['admin@db1.com.br']){
+      u['admin@db1.com.br']={name:'Administrador',email:'admin@db1.com.br',ph:await this.hash('adminadmin'),role:'admin',intern:null};
+      this.su(u)
+    }
+  },
+  async login(email,pwd){
+    if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
+    const u=this.gu(),user=u[email];
+    if(!user)return{ok:false,msg:'Usu\u00e1rio n\u00e3o encontrado'};
+    if(await this.hash(pwd)!==user.ph)return{ok:false,msg:'Senha incorreta'};
+    const s={email:user.email,name:user.name,role:user.role,intern:user.intern,at:Date.now()};
+    this.ss(s);return{ok:true,session:s}
+  },
+  isAdmin(){const s=this.gs();return s&&s.role==='admin'},
+  async addUser(name,email,pwd,intern){
+    if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
+    if(pwd.length<6)return{ok:false,msg:'Senha: m\u00ednimo 6 caracteres'};
+    const u=this.gu();if(u[email])return{ok:false,msg:'Email j\u00e1 cadastrado'};
+    u[email]={name,email,ph:await this.hash(pwd),role:'user',intern};this.su(u);return{ok:true}
+  },
+  async editUser(orig,name,email,pwd,intern){
+    if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
+    const u=this.gu(),user=u[orig];
+    if(!user)return{ok:false,msg:'Usu\u00e1rio n\u00e3o encontrado'};
+    if(email!==orig&&u[email])return{ok:false,msg:'Email j\u00e1 cadastrado'};
+    if(orig!==email)delete u[orig];
+    user.name=name;user.email=email;user.intern=intern;
+    if(pwd&&pwd.length>0){if(pwd.length<6)return{ok:false,msg:'Senha: m\u00ednimo 6 caracteres'};user.ph=await this.hash(pwd)}
+    u[email]=user;this.su(u);return{ok:true}
+  },
+  delUser(email){
+    if(email==='admin@db1.com.br')return{ok:false,msg:'N\u00e3o \u00e9 poss\u00edvel excluir o admin'};
+    const u=this.gu();delete u[email];this.su(u);return{ok:true}
+  }
+};
+// ===== LOGIN UI =====
+function togglePwd(){const p=document.getElementById('loginPassword');p.type=p.type==='password'?'text':'password'}
+async function handleLogin(e){
+  e.preventDefault();
+  const email=document.getElementById('loginEmail').value.trim();
+  const pwd=document.getElementById('loginPassword').value;
+  const err=document.getElementById('loginError');
+  const btn=document.getElementById('loginBtn');
+  err.classList.remove('show');document.getElementById('loginEmail').classList.remove('error');
+  if(!email.endsWith('@db1.com.br')){
+    err.textContent='Email deve usar o dom\u00ednio @db1.com.br';err.classList.add('show');
+    document.getElementById('loginEmail').classList.add('error');return false
+  }
+  btn.disabled=true;btn.textContent='Entrando...';
+  const r=await AUTH.login(email,pwd);
+  if(!r.ok){err.textContent=r.msg;err.classList.add('show');btn.disabled=false;btn.textContent='Entrar';return false}
+  document.getElementById('loginOverlay').style.display='none';startApp();return false
+}
+function handleLogout(){AUTH.cs();location.reload()}
+function startApp(){
+  const s=AUTH.gs();
+  if(!s){document.getElementById('loginOverlay').style.display='flex';return}
+  document.getElementById('loginOverlay').style.display='none';
+  const ini=s.name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase();
+  document.getElementById('userAvatar').textContent=ini;
+  document.getElementById('userName').textContent=s.name;
+  document.getElementById('userEmail').textContent=s.email;
+  const adm=s.role==='admin';
+  document.querySelectorAll('.admin-only').forEach(el=>el.classList.toggle('hidden',!adm));
+  document.getElementById('imenu').classList.toggle('hidden',!adm);
+  const lbl=document.querySelector('.ilabel');
+  if(adm){
+    ci=localStorage.getItem('ci')||INTERNS[0];
+    buildGrid();
+    if(lbl)lbl.textContent='Acompanhando';
+  }
+  else{
+    ci=s.intern||INTERNS[0];
+    if(lbl)lbl.textContent='Meu Progresso';
+  }
+  ca=localStorage.getItem(ci+':a')||'kam';cp=localStorage.getItem(ci+':p')||'eng';
+  load()
+}
+// ===== ADMIN FUNCTIONS =====
+function calcProgress(name){
+  const d=JSON.parse(localStorage.getItem(name+'::c')||'{}');
+  const sa=localStorage.getItem(name+':a')||'kam';
+  const sp2=localStorage.getItem(name+':p')||'eng';
+  const cnt=ids=>{const t=ids.length,done=ids.filter(id=>d[id]).length;return t?Math.round(done/t*100):0};
+  const ms=cnt(KEYS.ms[sa]||KEYS.ms.kam),ia=cnt(KEYS.ia),n8n=cnt(KEYS.n8n),pdi=cnt(KEYS.pdi[sp2]||KEYS.pdi.eng),ent=cnt(KEYS.ent);
+  return{ms,ia,n8n,pdi,ent,overall:Math.round((ms+ia+n8n+pdi+ent)/5)}
+}
+function renderAdmin(){
+  if(!AUTH.isAdmin())return;
+  const users=AUTH.gu();
+  const uc=Object.keys(users).length;
+  const ranks=INTERNS.map(n=>({name:n,...calcProgress(n)})).sort((a,b)=>b.overall-a.overall);
+  const avg=ranks.length?Math.round(ranks.reduce((s,i)=>s+i.overall,0)/ranks.length):0;
+  document.getElementById('adminStats').innerHTML=
+    '<div class="stat-card"><div class="val" style="color:var(--bl)">'+uc+'</div><div class="lbl">Usu\u00e1rios</div></div>'+
+    '<div class="stat-card"><div class="val" style="color:var(--gn)">'+INTERNS.length+'</div><div class="lbl">Estagi\u00e1rios</div></div>'+
+    '<div class="stat-card"><div class="val" style="color:var(--am)">'+avg+'%</div><div class="lbl">Progresso M\u00e9dio</div></div>';
+  document.getElementById('rankBody').innerHTML=ranks.map((r,i)=>{
+    const pc=i<3?'rank-'+(i+1):'rank-other';
+    const cl=i===0?'var(--gn)':i===1?'var(--bl)':i===2?'var(--am)':'var(--tx2)';
+    return '<tr style="cursor:pointer" onclick="sw(\''+r.name+'\');sp(\'visao\',document.querySelector(\'.nb\'))">'+
+      '<td><span class="rank-pos '+pc+'">'+(i+1)+'</span></td>'+
+      '<td><strong>'+r.name+'</strong></td>'+
+      '<td><div style="display:flex;align-items:center;gap:8px"><div class="rank-bar" style="min-width:60px"><div class="rank-bar-fill" style="width:'+r.overall+'%;background:'+cl+'"></div></div><span style="font-weight:700;color:'+cl+';min-width:35px">'+r.overall+'%</span></div></td>'+
+      '<td style="color:var(--bl)">'+r.ms+'%</td>'+
+      '<td style="color:var(--am)">'+r.ia+'%</td>'+
+      '<td style="color:var(--pu)">'+r.n8n+'%</td>'+
+      '<td style="color:var(--gn)">'+r.pdi+'%</td>'+
+      '<td style="color:var(--rd)">'+r.ent+'%</td></tr>'
+  }).join('');
+  const ue=Object.values(users);
+  document.getElementById('userBody').innerHTML=ue.map(u=>
+    '<tr><td><strong>'+u.name+'</strong></td><td>'+u.email+'</td><td>'+(u.intern||'\u2014')+'</td>'+
+    '<td><span class="b '+(u.role==='admin'?'brd':'bbl')+'" style="font-size:10px">'+(u.role==='admin'?'Admin':'Usu\u00e1rio')+'</span></td>'+
+    '<td><button class="btn-sm" onclick="openUserModal(\''+u.email+'\')">✏ Editar</button>'+
+    (u.email!=='admin@db1.com.br'?'<button class="btn-sm danger" onclick="confirmDelete(\''+u.email+'\')">✕ Excluir</button>':'')+
+    '</td></tr>'
+  ).join('')
+}
+function openUserModal(editEmail){
+  document.getElementById('modalError').classList.remove('show');
+  const sel=document.getElementById('uIntern');
+  sel.innerHTML='<option value="">(Nenhum \u2014 Admin)</option>'+INTERNS.map(n=>'<option value="'+n+'">'+n+'</option>').join('');
+  if(editEmail){
+    const u=AUTH.gu()[editEmail];if(!u)return;
+    document.getElementById('modalTitle').textContent='Editar Usu\u00e1rio';
+    document.getElementById('editingEmail').value=editEmail;
+    document.getElementById('uName').value=u.name;
+    document.getElementById('uEmail').value=u.email;
+    document.getElementById('uIntern').value=u.intern||'';
+    document.getElementById('uPassword').value='';
+    document.getElementById('uPassword').placeholder='Deixe vazio para manter';
+    document.getElementById('uPassword').required=false;
+    document.getElementById('pwdLabel').textContent='Nova Senha (opcional)'
+  } else {
+    document.getElementById('modalTitle').textContent='Novo Usu\u00e1rio';
+    document.getElementById('editingEmail').value='';
+    document.getElementById('userForm').reset();
+    document.getElementById('uPassword').placeholder='M\u00ednimo 6 caracteres';
+    document.getElementById('uPassword').required=true;
+    document.getElementById('pwdLabel').textContent='Senha'
+  }
+  document.getElementById('userModal').classList.add('show')
+}
+function closeUserModal(){document.getElementById('userModal').classList.remove('show')}
+async function saveUser(e){
+  e.preventDefault();
+  const oe=document.getElementById('editingEmail').value;
+  const name=document.getElementById('uName').value.trim();
+  const email=document.getElementById('uEmail').value.trim();
+  const pwd=document.getElementById('uPassword').value;
+  const intern=document.getElementById('uIntern').value||null;
+  const err=document.getElementById('modalError');
+  let r;
+  if(oe)r=await AUTH.editUser(oe,name,email,pwd,intern);
+  else{if(!pwd){err.textContent='Senha \u00e9 obrigat\u00f3ria';err.classList.add('show');return false}r=await AUTH.addUser(name,email,pwd,intern)}
+  if(!r.ok){err.textContent=r.msg;err.classList.add('show');return false}
+  closeUserModal();renderAdmin();return false
+}
+function confirmDelete(email){
+  if(!confirm('Excluir o usu\u00e1rio '+email+'?'))return;
+  const r=AUTH.delUser(email);if(r.ok)renderAdmin();else alert(r.msg)
+}
+// ===== INIT =====
+(async()=>{await AUTH.seed();startApp()})();
+</script>
+</body>
+</html>
