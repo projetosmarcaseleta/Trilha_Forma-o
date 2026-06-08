@@ -898,8 +898,23 @@ p{font-size:13px;line-height:1.6;color:var(--tx2);margin:0}
   <div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><div class="ct">👥 Usuários do Sistema</div><button class="btn-add" onclick="openUserModal()">+ Novo Usuário</button></div>
     <div style="overflow-x:auto"><table class="user-table"><thead><tr><th>Nome</th><th>Email</th><th>Estagiário</th><th>Papel</th><th>Ações</th></tr></thead><tbody id="userBody"></tbody></table></div>
   </div>
+  <div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><div class="ct">🎓 Estagiários</div><button class="btn-add" onclick="openInternModal()">+ Novo Estagiário</button></div>
+    <div style="overflow-x:auto"><table class="user-table"><thead><tr><th>Nome</th><th>Ações</th></tr></thead><tbody id="internBody"></tbody></table></div>
+  </div>
 </div>
 
+</div>
+
+<div class="modal-overlay" id="internModal">
+  <div class="modal-box">
+    <h3><span id="internModalTitle">Novo Estagiário</span><button class="modal-close" onclick="closeInternModal()">✕</button></h3>
+    <div class="modal-error" id="internModalError"></div>
+    <form id="internForm" onsubmit="return saveIntern(event)">
+      <input type="hidden" id="editingIntern">
+      <div class="modal-group"><label>Nome do estagiário</label><input type="text" id="iName" placeholder="Nome completo" required></div>
+      <div class="modal-actions"><button type="button" class="btn" onclick="closeInternModal()">Cancelar</button><button type="submit" class="btn" style="background:var(--bl);border-color:var(--bl);color:#fff">Salvar</button></div>
+    </form>
+  </div>
 </div>
 
 <div class="modal-overlay" id="userModal">
@@ -918,7 +933,11 @@ p{font-size:13px;line-height:1.6;color:var(--tx2);margin:0}
 </div>
 
 <script>
-const INTERNS=['Bruno Andre Fernandes Ortega','Enzo Gabriel Dias Perlato','Guilherme Estevam Araujo','Gustavo Amaro Niehues','Gustavo dos Santos','Kenzo Wilder Yamamoto','Leonardo Amaro Alves Cunha','Lucas Emiliano Lopes Berman','Lucas Henrique Fernandes Soares Da Silva','Luna Halabi Feitosa','Matheus Felipe De Souza Zamferrari','Paola Rodrigues da Silva','Rafael Garcia Ribeiro','Samuel Hungaro da Silva'];
+let INTERNS = JSON.parse(localStorage.getItem('admin_interns') || 'null');
+if (!INTERNS) {
+  INTERNS=['Bruno Andre Fernandes Ortega','Enzo Gabriel Dias Perlato','Guilherme Estevam Araujo','Gustavo Amaro Niehues','Gustavo dos Santos','Kenzo Wilder Yamamoto','Leonardo Amaro Alves Cunha','Lucas Emiliano Lopes Berman','Lucas Henrique Fernandes Soares Da Silva','Luna Halabi Feitosa','Matheus Felipe De Souza Zamferrari','Paola Rodrigues da Silva','Rafael Garcia Ribeiro','Samuel Hungaro da Silva'];
+  localStorage.setItem('admin_interns', JSON.stringify(INTERNS));
+}
 const KEYS={
   ms:{kam:['ms-kam-1','ms-kam-2','ms-kam-3','ms-kam-4','ms-kam-5','ms-kam-6','ms-kam-7','ms-kam-8','ms-kam-9','ms-kam-10','ms-kam-11','ms-kam-12'],back:['ms-back-1','ms-back-2','ms-back-3','ms-back-4','ms-back-5','ms-back-6','ms-back-7','ms-back-8','ms-back-9','ms-back-10','ms-back-11'],sac:['ms-sac-1','ms-sac-2','ms-sac-3','ms-sac-4','ms-sac-5','ms-sac-6','ms-sac-7','ms-sac-8','ms-sac-9','ms-sac-10','ms-sac-11'],vend:['ms-vend-1','ms-vend-2','ms-vend-3','ms-vend-4','ms-vend-5','ms-vend-6','ms-vend-7','ms-vend-8','ms-vend-9','ms-vend-10','ms-vend-11']},
   ia:['ia-s1','ia-s2','ia-s3','ia-s4','ia-s5','ia-s6','ia-s7','ia-s8','ia-s9','ia-s10','ia-s11','ia-s12'],
@@ -1097,7 +1116,13 @@ function renderAdmin(){
     '<td><button class="btn-sm" onclick="openUserModal(\''+u.email+'\')">✏ Editar</button>'+
     (u.email!=='admin@db1.com.br'?'<button class="btn-sm danger" onclick="confirmDelete(\''+u.email+'\')">✕ Excluir</button>':'')+
     '</td></tr>'
-  ).join('')
+  ).join('');
+  document.getElementById('internBody').innerHTML=INTERNS.map(n=>
+    '<tr><td><strong>'+n+'</strong></td>'+
+    '<td><button class="btn-sm" onclick="openInternModal(\''+n+'\')">✏ Editar</button>'+
+    '<button class="btn-sm danger" onclick="confirmDeleteIntern(\''+n+'\')">✕ Excluir</button>'+
+    '</td></tr>'
+  ).join('');
 }
 function openUserModal(editEmail){
   document.getElementById('modalError').classList.remove('show');
@@ -1142,6 +1167,51 @@ async function saveUser(e){
 function confirmDelete(email){
   if(!confirm('Excluir o usu\u00e1rio '+email+'?'))return;
   const r=AUTH.delUser(email);if(r.ok)renderAdmin();else alert(r.msg)
+}
+function openInternModal(editName){
+  document.getElementById('internModalError').classList.remove('show');
+  if(editName){
+    document.getElementById('internModalTitle').textContent='Editar Estagi\u00e1rio';
+    document.getElementById('editingIntern').value=editName;
+    document.getElementById('iName').value=editName;
+  }else{
+    document.getElementById('internModalTitle').textContent='Novo Estagi\u00e1rio';
+    document.getElementById('editingIntern').value='';
+    document.getElementById('internForm').reset();
+  }
+  document.getElementById('internModal').classList.add('show');
+}
+function closeInternModal(){document.getElementById('internModal').classList.remove('show')}
+function saveIntern(e){
+  e.preventDefault();
+  const orig=document.getElementById('editingIntern').value;
+  const name=document.getElementById('iName').value.trim();
+  const err=document.getElementById('internModalError');
+  if(!name)return false;
+  if(name!==orig&&INTERNS.includes(name)){err.textContent='Estagi\u00e1rio j\u00e1 existe';err.classList.add('show');return false}
+  if(orig){
+    const idx=INTERNS.indexOf(orig);if(idx!==-1)INTERNS[idx]=name;
+    const pc=localStorage.getItem(orig+'::c');if(pc){localStorage.setItem(name+'::c',pc);localStorage.removeItem(orig+'::c')}
+    const pa=localStorage.getItem(orig+':a');if(pa){localStorage.setItem(name+':a',pa);localStorage.removeItem(orig+':a')}
+    const pp=localStorage.getItem(orig+':p');if(pp){localStorage.setItem(name+':p',pp);localStorage.removeItem(orig+':p')}
+    const u=AUTH.gu();Object.values(u).forEach(user=>{if(user.intern===orig)user.intern=name});AUTH.su(u);
+    if(ci===orig){ci=name;localStorage.setItem('ci',name)}
+  }else{
+    INTERNS.push(name);
+  }
+  INTERNS.sort();
+  localStorage.setItem('admin_interns',JSON.stringify(INTERNS));
+  closeInternModal();buildGrid();renderAdmin();load();
+  return false;
+}
+function confirmDeleteIntern(name){
+  if(!confirm('Excluir o estagi\u00e1rio '+name+'? Todo o progresso ser\u00e1 apagado.'))return;
+  INTERNS=INTERNS.filter(n=>n!==name);
+  localStorage.setItem('admin_interns',JSON.stringify(INTERNS));
+  localStorage.removeItem(name+'::c');localStorage.removeItem(name+':a');localStorage.removeItem(name+':p');
+  const u=AUTH.gu();Object.values(u).forEach(user=>{if(user.intern===name)user.intern=null});AUTH.su(u);
+  if(ci===name){ci=INTERNS[0]||'';localStorage.setItem('ci',ci)}
+  buildGrid();renderAdmin();load();
 }
 // ===== INIT =====
 (async()=>{await AUTH.seed();startApp()})();
