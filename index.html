@@ -933,11 +933,44 @@ p{font-size:13px;line-height:1.6;color:var(--tx2);margin:0}
 </div>
 
 <script>
-let INTERNS = JSON.parse(localStorage.getItem('admin_interns') || 'null');
-if (!INTERNS) {
-  INTERNS=['Bruno Andre Fernandes Ortega','Enzo Gabriel Dias Perlato','Guilherme Estevam Araujo','Gustavo Amaro Niehues','Gustavo dos Santos','Kenzo Wilder Yamamoto','Leonardo Amaro Alves Cunha','Lucas Emiliano Lopes Berman','Lucas Henrique Fernandes Soares Da Silva','Luna Halabi Feitosa','Matheus Felipe De Souza Zamferrari','Paola Rodrigues da Silva','Rafael Garcia Ribeiro','Samuel Hungaro da Silva'];
-  localStorage.setItem('admin_interns', JSON.stringify(INTERNS));
+const API_URL = '/api/db';
+
+let DB_CACHE = {
+  interns: [],
+  users: {},
+  texts: {},
+  internData: {}
+};
+
+let INTERNS = [];
+
+async function fetchDb() {
+  try {
+    const res = await fetch(API_URL);
+    DB_CACHE = await res.json();
+    INTERNS = DB_CACHE.interns;
+  } catch (e) {
+    console.error('Error fetching database:', e);
+  }
 }
+
+async function saveToServer(payload) {
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+    if (result.success) {
+      DB_CACHE = result.db;
+      INTERNS = DB_CACHE.interns;
+    }
+  } catch (e) {
+    console.error('Error saving to server:', e);
+  }
+}
+
 const KEYS={
   ms:{kam:['ms-kam-1','ms-kam-2','ms-kam-3','ms-kam-4','ms-kam-5','ms-kam-6','ms-kam-7','ms-kam-8','ms-kam-9','ms-kam-10','ms-kam-11','ms-kam-12'],back:['ms-back-1','ms-back-2','ms-back-3','ms-back-4','ms-back-5','ms-back-6','ms-back-7','ms-back-8','ms-back-9','ms-back-10','ms-back-11'],sac:['ms-sac-1','ms-sac-2','ms-sac-3','ms-sac-4','ms-sac-5','ms-sac-6','ms-sac-7','ms-sac-8','ms-sac-9','ms-sac-10','ms-sac-11'],vend:['ms-vend-1','ms-vend-2','ms-vend-3','ms-vend-4','ms-vend-5','ms-vend-6','ms-vend-7','ms-vend-8','ms-vend-9','ms-vend-10','ms-vend-11']},
   ia:['ia-s1','ia-s2','ia-s3','ia-s4','ia-s5','ia-s6','ia-s7','ia-s8','ia-s9','ia-s10','ia-s11','ia-s12'],
@@ -950,15 +983,31 @@ const KEYS={
   ent:['ent-1','ent-2','ent-hack','ent-3','ent-4','ent-5']
 };
 let ci,ca,cp,em=false;
-function gc(){return JSON.parse(localStorage.getItem(ci+'::c')||'{}')}
-function sc(c){localStorage.setItem(ci+'::c',JSON.stringify(c))}
+
+function gc(){
+  if (!ci || !DB_CACHE.internData[ci]) return {};
+  return DB_CACHE.internData[ci].c || {};
+}
+
+async function sc(c){
+  if (!ci) return;
+  await saveToServer({
+    internName: ci,
+    internDataUpdate: { c }
+  });
+}
+
 function buildGrid(){const g=document.getElementById('igrid');g.innerHTML='';INTERNS.forEach(n=>{const b=document.createElement('button');b.className='ibtn'+(n===ci?' on':'');b.dataset.n=n;b.textContent=n;b.onclick=()=>sw(n);g.appendChild(b)})}
 function toggleMenu(){document.getElementById('imenu').classList.toggle('open')}
 function sw(name){ci=name;localStorage.setItem('ci',name);document.getElementById('imenu').classList.remove('open');load()}
+
 function load(){
   document.querySelectorAll('.ci input[type="checkbox"]').forEach(el=>{el.checked=false;el.closest('.ci').classList.remove('done')});
   const c=gc();Object.keys(c).forEach(id=>{if(!c[id])return;const el=document.getElementById(id);if(el){el.checked=true;el.closest('.ci').classList.add('done')}});
-  ca=localStorage.getItem(ci+':a')||'kam';cp=localStorage.getItem(ci+':p')||'eng';
+  
+  const internInfo = DB_CACHE.internData[ci] || {};
+  ca=internInfo.a||'kam';cp=internInfo.p||'eng';
+  
   document.querySelectorAll('[data-a]').forEach(b=>b.classList.toggle('on',b.dataset.a===ca));
   document.querySelectorAll('.apane').forEach(p=>p.classList.remove('on'));const ap=document.getElementById('ap-'+ca);if(ap)ap.classList.add('on');
   document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));const po=document.querySelector('.po.'+cp);if(po)po.classList.add('on');
@@ -968,10 +1017,19 @@ function load(){
   document.getElementById('pdilbl').textContent='Progresso ('+pmap[cp]+')';
   document.getElementById('icur').textContent=ci;
   document.querySelectorAll('.ibtn').forEach(b=>b.classList.toggle('on',b.dataset.n===ci));
-  const texts=JSON.parse(localStorage.getItem('et')||'{}');document.querySelectorAll('.ed[data-k]').forEach(el=>{if(texts[el.dataset.k])el.innerHTML=texts[el.dataset.k]});
+  
+  const texts=DB_CACHE.texts||{};document.querySelectorAll('.ed[data-k]').forEach(el=>{if(texts[el.dataset.k])el.innerHTML=texts[el.dataset.k]});
   ua();
 }
-function tg(id){const el=document.getElementById(id);if(!el)return;el.checked=!el.checked;el.closest('.ci').classList.toggle('done',el.checked);const c=gc();c[id]=el.checked;sc(c);ua()}
+
+async function tg(id){
+  const el=document.getElementById(id);if(!el)return;
+  el.checked=!el.checked;el.closest('.ci').classList.toggle('done',el.checked);
+  const c=gc();c[id]=el.checked;
+  await sc(c);
+  ua();
+}
+
 function pct(ids){const t=ids.length,d=ids.filter(id=>{const e=document.getElementById(id);return e&&e.checked}).length;return t?Math.round(d/t*100):0}
 function sb(bid,pid,v){const b=document.getElementById(bid),p=document.getElementById(pid);if(b)b.style.width=v+'%';if(p)p.textContent=v+'%'}
 function ua(){
@@ -980,20 +1038,78 @@ function ua(){
   sb('bms2','pms2',m);sb('bia2','pia2',ia);sb('bn8n2','pn8n2',n);sb('bpdi2','ppdi2',pd);sb('bent2','pent2',en);
 }
 function sp(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));document.getElementById('panel-'+id).classList.add('on');if(btn)btn.classList.add('on');if(id==='admin')renderAdmin()}
-function selA(a,btn){ca=a;localStorage.setItem(ci+':a',a);document.querySelectorAll('.apane').forEach(p=>p.classList.remove('on'));document.querySelectorAll('[data-a]').forEach(b=>b.classList.remove('on'));const pane=document.getElementById('ap-'+a);if(pane)pane.classList.add('on');if(btn)btn.classList.add('on');const amap={kam:'KAM',back:'Backoffice',sac:'SAC',vend:'Vendas'};document.getElementById('mslbl').textContent='Progresso ('+amap[a]+')';ua()}
-function selP(p,el){cp=p;localStorage.setItem(ci+':p',p);document.querySelectorAll('.ppane').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));const pane=document.getElementById('pp-'+p);if(pane)pane.classList.add('on');if(el)el.classList.add('on');const pmap={eng:'Engenharia',serv:'Serviços',neg:'Negócios'};document.getElementById('pdilbl').textContent='Progresso ('+pmap[p]+')';ua()}
-function toggleEdit(){em=!em;document.body.classList.toggle('emode',em);document.getElementById('ebtn').textContent=em?'💾 Sair da edição':'✏️ Editar textos';document.getElementById('ebtn').classList.toggle('eact',em);const texts=JSON.parse(localStorage.getItem('et')||'{}');if(em){document.querySelectorAll('.ed').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',saveEd)})}else{document.querySelectorAll('.ed').forEach(el=>{el.contentEditable='false';el.removeEventListener('blur',saveEd);if(el.dataset.k)texts[el.dataset.k]=el.innerHTML});localStorage.setItem('et',JSON.stringify(texts))}}
-function saveEd(e){const t=JSON.parse(localStorage.getItem('et')||'{}');if(e.target.dataset.k)t[e.target.dataset.k]=e.target.innerHTML;localStorage.setItem('et',JSON.stringify(t))}
-function resetAll(){if(!confirm('Limpar TODO o progresso de '+ci+'? (Outros estagiários não serão afetados)'))return;localStorage.removeItem(ci+'::c');localStorage.removeItem(ci+':a');localStorage.removeItem(ci+':p');load()}
+
+async function selA(a,btn){
+  ca=a;
+  await saveToServer({
+    internName: ci,
+    internDataUpdate: { a }
+  });
+  document.querySelectorAll('.apane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('[data-a]').forEach(b=>b.classList.remove('on'));
+  const pane=document.getElementById('ap-'+a);if(pane)pane.classList.add('on');
+  if(btn)btn.classList.add('on');
+  const amap={kam:'KAM',back:'Backoffice',sac:'SAC',vend:'Vendas'};
+  document.getElementById('mslbl').textContent='Progresso ('+amap[a]+')';
+  ua();
+}
+
+async function selP(p,el){
+  cp=p;
+  await saveToServer({
+    internName: ci,
+    internDataUpdate: { p }
+  });
+  document.querySelectorAll('.ppane').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.po').forEach(o=>o.classList.remove('on'));
+  const pane=document.getElementById('pp-'+p);if(pane)pane.classList.add('on');
+  if(el)el.classList.add('on');
+  const pmap={eng:'Engenharia',serv:'Serviços',neg:'Negócios'};
+  document.getElementById('pdilbl').textContent='Progresso ('+pmap[p]+')';
+  ua();
+}
+
+async function toggleEdit(){
+  em=!em;
+  document.body.classList.toggle('emode',em);
+  document.getElementById('ebtn').textContent=em?'💾 Sair da edição':'✏️ Editar textos';
+  document.getElementById('ebtn').classList.toggle('eact',em);
+  const texts=DB_CACHE.texts||{};
+  if(em){
+    document.querySelectorAll('.ed').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',saveEd)})
+  }else{
+    document.querySelectorAll('.ed').forEach(el=>{
+      el.contentEditable='false';
+      el.removeEventListener('blur',saveEd);
+      if(el.dataset.k)texts[el.dataset.k]=el.innerHTML
+    });
+    await saveToServer({ texts });
+  }
+}
+
+async function saveEd(e){
+  const t=DB_CACHE.texts||{};
+  if(e.target.dataset.k)t[e.target.dataset.k]=e.target.innerHTML;
+  await saveToServer({ texts: t });
+}
+
+async function resetAll(){
+  if(!confirm('Limpar TODO o progresso de '+ci+'? (Outros estagiários não serão afetados)'))return;
+  await saveToServer({ resetIntern: ci });
+  load();
+}
+
 // ===== AUTH MANAGER =====
 const AUTH={
-  SK:'auth_users',SS:'auth_session',
+  SS:'auth_session',
   async hash(s){
     try{const d=new TextEncoder().encode(s);const b=await crypto.subtle.digest('SHA-256',d);return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
     catch(e){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h)+s.charCodeAt(i)}return'h'+Math.abs(h).toString(36)}
   },
-  gu(){return JSON.parse(localStorage.getItem(this.SK)||'{}')},
-  su(u){localStorage.setItem(this.SK,JSON.stringify(u))},
+  gu(){return DB_CACHE.users||{}},
+  async su(u){
+    await saveToServer({ users: u });
+  },
   gs(){try{return JSON.parse(sessionStorage.getItem(this.SS))}catch(e){return null}},
   ss(s){sessionStorage.setItem(this.SS,JSON.stringify(s))},
   cs(){sessionStorage.removeItem(this.SS)},
@@ -1001,7 +1117,7 @@ const AUTH={
     const u=this.gu();
     if(!u['admin@db1.com.br']){
       u['admin@db1.com.br']={name:'Administrador',email:'admin@db1.com.br',ph:await this.hash('adminadmin'),role:'admin',intern:null};
-      this.su(u)
+      await this.su(u);
     }
   },
   async login(email,pwd){
@@ -1017,7 +1133,7 @@ const AUTH={
     if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
     if(pwd.length<6)return{ok:false,msg:'Senha: m\u00ednimo 6 caracteres'};
     const u=this.gu();if(u[email])return{ok:false,msg:'Email j\u00e1 cadastrado'};
-    u[email]={name,email,ph:await this.hash(pwd),role:'user',intern};this.su(u);return{ok:true}
+    u[email]={name,email,ph:await this.hash(pwd),role:'user',intern};await this.su(u);return{ok:true}
   },
   async editUser(orig,name,email,pwd,intern){
     if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
@@ -1027,11 +1143,11 @@ const AUTH={
     if(orig!==email)delete u[orig];
     user.name=name;user.email=email;user.intern=intern;
     if(pwd&&pwd.length>0){if(pwd.length<6)return{ok:false,msg:'Senha: m\u00ednimo 6 caracteres'};user.ph=await this.hash(pwd)}
-    u[email]=user;this.su(u);return{ok:true}
+    u[email]=user;await this.su(u);return{ok:true}
   },
-  delUser(email){
+  async delUser(email){
     if(email==='admin@db1.com.br')return{ok:false,msg:'N\u00e3o \u00e9 poss\u00edvel excluir o admin'};
-    const u=this.gu();delete u[email];this.su(u);return{ok:true}
+    const u=this.gu();delete u[email];await this.su(u);return{ok:true}
   }
 };
 // ===== LOGIN UI =====
@@ -1074,14 +1190,16 @@ function startApp(){
     ci=s.intern||INTERNS[0];
     if(lbl)lbl.textContent='Meu Progresso';
   }
-  ca=localStorage.getItem(ci+':a')||'kam';cp=localStorage.getItem(ci+':p')||'eng';
+  const internInfo = DB_CACHE.internData[ci] || {};
+  ca=internInfo.a||'kam';cp=internInfo.p||'eng';
   load()
 }
 // ===== ADMIN FUNCTIONS =====
 function calcProgress(name){
-  const d=JSON.parse(localStorage.getItem(name+'::c')||'{}');
-  const sa=localStorage.getItem(name+':a')||'kam';
-  const sp2=localStorage.getItem(name+':p')||'eng';
+  const internInfo = DB_CACHE.internData[name] || {};
+  const d = internInfo.c || {};
+  const sa = internInfo.a || 'kam';
+  const sp2 = internInfo.p || 'eng';
   const cnt=ids=>{const t=ids.length,done=ids.filter(id=>d[id]).length;return t?Math.round(done/t*100):0};
   const ms=cnt(KEYS.ms[sa]||KEYS.ms.kam),ia=cnt(KEYS.ia),n8n=cnt(KEYS.n8n),pdi=cnt(KEYS.pdi[sp2]||KEYS.pdi.eng),ent=cnt(KEYS.ent);
   return{ms,ia,n8n,pdi,ent,overall:Math.round((ms+ia+n8n+pdi+ent)/5)}
@@ -1164,9 +1282,9 @@ async function saveUser(e){
   if(!r.ok){err.textContent=r.msg;err.classList.add('show');return false}
   closeUserModal();renderAdmin();return false
 }
-function confirmDelete(email){
+async function confirmDelete(email){
   if(!confirm('Excluir o usu\u00e1rio '+email+'?'))return;
-  const r=AUTH.delUser(email);if(r.ok)renderAdmin();else alert(r.msg)
+  const r=await AUTH.delUser(email);if(r.ok)renderAdmin();else alert(r.msg)
 }
 function openInternModal(editName){
   document.getElementById('internModalError').classList.remove('show');
@@ -1182,7 +1300,7 @@ function openInternModal(editName){
   document.getElementById('internModal').classList.add('show');
 }
 function closeInternModal(){document.getElementById('internModal').classList.remove('show')}
-function saveIntern(e){
+async function saveIntern(e){
   e.preventDefault();
   const orig=document.getElementById('editingIntern').value;
   const name=document.getElementById('iName').value.trim();
@@ -1191,30 +1309,36 @@ function saveIntern(e){
   if(name!==orig&&INTERNS.includes(name)){err.textContent='Estagi\u00e1rio j\u00e1 existe';err.classList.add('show');return false}
   if(orig){
     const idx=INTERNS.indexOf(orig);if(idx!==-1)INTERNS[idx]=name;
-    const pc=localStorage.getItem(orig+'::c');if(pc){localStorage.setItem(name+'::c',pc);localStorage.removeItem(orig+'::c')}
-    const pa=localStorage.getItem(orig+':a');if(pa){localStorage.setItem(name+':a',pa);localStorage.removeItem(orig+':a')}
-    const pp=localStorage.getItem(orig+':p');if(pp){localStorage.setItem(name+':p',pp);localStorage.removeItem(orig+':p')}
-    const u=AUTH.gu();Object.values(u).forEach(user=>{if(user.intern===orig)user.intern=name});AUTH.su(u);
+    const internInfo = DB_CACHE.internData[orig] || {};
+    delete DB_CACHE.internData[orig];
+    DB_CACHE.internData[name] = internInfo;
+    const u=AUTH.gu();Object.values(u).forEach(user=>{if(user.intern===orig)user.intern=name});
     if(ci===orig){ci=name;localStorage.setItem('ci',name)}
+    await saveToServer({
+      interns: INTERNS,
+      internData: DB_CACHE.internData,
+      users: u
+    });
   }else{
     INTERNS.push(name);
+    INTERNS.sort();
+    await saveToServer({ interns: INTERNS });
   }
-  INTERNS.sort();
-  localStorage.setItem('admin_interns',JSON.stringify(INTERNS));
   closeInternModal();buildGrid();renderAdmin();load();
   return false;
 }
-function confirmDeleteIntern(name){
+async function confirmDeleteIntern(name){
   if(!confirm('Excluir o estagi\u00e1rio '+name+'? Todo o progresso ser\u00e1 apagado.'))return;
-  INTERNS=INTERNS.filter(n=>n!==name);
-  localStorage.setItem('admin_interns',JSON.stringify(INTERNS));
-  localStorage.removeItem(name+'::c');localStorage.removeItem(name+':a');localStorage.removeItem(name+':p');
-  const u=AUTH.gu();Object.values(u).forEach(user=>{if(user.intern===name)user.intern=null});AUTH.su(u);
+  await saveToServer({ deleteIntern: name });
   if(ci===name){ci=INTERNS[0]||'';localStorage.setItem('ci',ci)}
   buildGrid();renderAdmin();load();
 }
 // ===== INIT =====
-(async()=>{await AUTH.seed();startApp()})();
+(async()=>{
+  await fetchDb();
+  await AUTH.seed();
+  startApp();
+})();
 </script>
 </body>
 </html>

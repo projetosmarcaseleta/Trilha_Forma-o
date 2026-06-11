@@ -1,0 +1,14 @@
+{
+  "name": "marca-seleta-backend",
+  "version": "1.0.0",
+  "description": "Backend para o programa de formação da Marca Seleta",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
