@@ -1113,13 +1113,6 @@ const AUTH={
   gs(){try{return JSON.parse(sessionStorage.getItem(this.SS))}catch(e){return null}},
   ss(s){sessionStorage.setItem(this.SS,JSON.stringify(s))},
   cs(){sessionStorage.removeItem(this.SS)},
-  async seed(){
-    const u=this.gu();
-    if(!u['admin@db1.com.br']){
-      u['admin@db1.com.br']={name:'Administrador',email:'admin@db1.com.br',ph:await this.hash('adminadmin'),role:'admin',intern:null};
-      await this.su(u);
-    }
-  },
   async login(email,pwd){
     if(!email.endsWith('@db1.com.br'))return{ok:false,msg:'Email deve ser @db1.com.br'};
     const u=this.gu(),user=u[email];
@@ -1336,7 +1329,6 @@ async function confirmDeleteIntern(name){
 // ===== INIT =====
 (async()=>{
   await fetchDb();
-  await AUTH.seed();
   startApp();
 })();
 </script>
